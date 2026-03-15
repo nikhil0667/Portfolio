@@ -5,7 +5,7 @@ import './Hero.css';
 
 // Using actual image paths copied from legacy
 // Using actual image paths copied from legacy
-const profileImg = '/assets/logo.jpg';
+const profileImg = '../src/assets/logo.jpg';
 
 const Hero = () => {
   const scrollToContact = () => {
