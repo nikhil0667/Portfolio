@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 import './Certificates.css';
 
+import hackerankImg from '../assets/hackerank.png';
+import gfgImg from '../assets/gfg.png';
+import uniImg from '../assets/uni.png';
+
 const certificates = [
   {
     id: 1,
@@ -10,7 +14,7 @@ const certificates = [
     issuer: "HackerRank",
     date: "Aug 28, 2024",
     description: "Strengthened core programming logic through timed coding challenges. Practiced efficient solutions using loops, arrays, conditions, and recursion to solve algorithmic problems under constraints.",
-    image: "../src/assets/hackerank.png",
+    image: hackerankImg,
     link: "https://www.hackerrank.com/certificates/759a50c960f2"
   },
   {
@@ -19,7 +23,7 @@ const certificates = [
     issuer: "GeeksforGeeks",
     date: "May 2025",
     description: "Completed a 4-week course covering Java fundamentals, object-oriented programming (OOP), exception handling, file I/O, and practical coding practices.",
-    image: "../src/assets/gfg.png",
+    image: gfgImg,
     link: "https://media.geeksforgeeks.org/courses/certificates/d67075ecf44a2328f425867c44a01794.pdf"
   },
   {
@@ -28,7 +32,7 @@ const certificates = [
     issuer: "UniAthena & Cambridge International",
     date: "Jan 2025",
     description: "Completed a foundational Python course covering core concepts such as variables, loops, conditionals, and functions. Achieved a final score of 84/100.",
-    image: "../src/assets/uni.png",
+    image: uniImg,
     links: [
       { url: "https://lnkd.in/d5j3bFZt", label: "View Certificate" },
       { url: "https://drive.google.com/file/d/1-05bCs8sl8G-rPG_bDhXONM1jNZfsP-N/view", label: "View Result" }

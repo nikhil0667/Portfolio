@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Calendar, MapPin, Briefcase } from 'lucide-react';
 import './Experience.css';
 
+import itSolutionsImg from '../assets/IT Solutions.jpg';
+
 const experiences = [
   {
     id: 1,
@@ -12,7 +14,7 @@ const experiences = [
     location: "Remote / On-site",
     description: 
       "Developed real-world mobile applications using Flutter and native Android. Integrated Node.js backends and RESTful APIs while strictly adhering to UI/UX enhancements and app performance tuning.",
-    logo: "../src/assets/IT Solutions.jpg",
+    logo: itSolutionsImg,
     link: "https://www.linkedin.com/in/nikhil-khambhayta/overlay/1729096664467/single-media-viewer/?profileId=ACoAAEjxm1IBOtt-Z-b8-k9ts0nbrXu2W4F_T08"
   }
   // Add EliteWave Tech here when available
