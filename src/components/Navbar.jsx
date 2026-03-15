@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const navLinks = [
@@ -16,16 +16,11 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
-  };
+    // Enforce dark theme permanently
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,16 +84,10 @@ const Navbar = () => {
               {link.name}
             </button>
           ))}
-          <button className="theme-toggle nav-link" onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="mobile-actions mobile-only" style={{display: 'flex', gap: '1rem', alignItems: 'center'}}>
-          <button className="theme-toggle" style={{background: 'none', border:'none', color:'var(--text-primary)'}} onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+        <div className="mobile-actions mobile-only">
           <button 
             className="mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
