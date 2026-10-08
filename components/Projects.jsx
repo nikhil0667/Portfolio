@@ -7,10 +7,10 @@ import './Projects.css';
 
 const projects = [
   {
-    title: 'Vedenterprise',
-    description: 'A modern web application built for Vedenterprise. Features include dynamic user interfaces, optimized performance, and a seamless user experience.',
+    title: 'Ved Enterprise – Corporate Website',
+    description: 'Multilingual corporate website for a global blister packing machine spare parts exporter. Built with Next.js 16, React, TypeScript, and Tailwind CSS, featuring 20+ language support, 93+ Lighthouse performance, and advanced SEO.',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    tech: ['Next.js', 'React', 'Web Design'],
+    tech: ['Next.js 16', 'React', 'TypeScript', 'Tailwind CSS', 'SEO', 'i18n'],
     link: 'https://vedenterprise.vercel.app',
     accent: '#38bdf8',
   },
