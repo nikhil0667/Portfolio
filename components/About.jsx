@@ -55,16 +55,16 @@ const About = () => {
             
             <motion.div variants={itemVariants} className="about-description">
               <p>
-                I am a Software Engineer with a strong foundation in Core Java and Advanced Java technologies including Servlets, JSP, and JDBC. I focus on building reliable backend systems and efficient APIs.
+                I’m a Software Engineer focused on building production-ready mobile, backend, and web applications. Currently, I work as a Mobile Application Developer at Shivaay Soft, where I develop Flutter & Dart mobile applications, integrate REST APIs, and resolve complex production challenges.
               </p>
               <p>
-                Along with backend development, I have over 1 year of experience developing mobile applications using Flutter, where I build responsive and high-performance cross-platform apps.
+                I approach engineering problems across the complete application flow: Mobile App → API → Backend → Database → Response. Rather than only patching visible symptoms, I focus on identifying root causes by analyzing API behavior, logs, permissions, authentication (JWT), backend logic, and database transactions.
               </p>
               <p>
-                My approach to software development focuses on clean code, scalable architecture, and industry best practices such as MVC design patterns and RESTful architecture.
+                My background includes an MCA degree (8.5 CPI) from LDRP Institute of Technology & Research (GTU), a BCA degree with Distinction, and software engineering experience at Hyperlink Infosystem and DeepVecto.
               </p>
               <p>
-                I am continuously improving my expertise in Spring Boot, backend architecture, and scalable application development.
+                My core expertise spans Flutter, Dart, Java, Spring Boot, REST APIs, Next.js, React, TypeScript, and SQL databases.
               </p>
             </motion.div>
 

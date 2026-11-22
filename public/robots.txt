@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.nikhilkhambhayta.tech/sitemap.xml
+Sitemap: https://nikhilkhambhayta.vercel.app/sitemap.xml

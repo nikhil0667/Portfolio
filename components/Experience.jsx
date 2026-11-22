@@ -8,16 +8,37 @@ import itSolutionsImg from '../assets/IT Solutions.jpg';
 const experiences = [
   {
     id: 1,
-    role: "Intern – Android & Cross-Platform Developer",
-    company: "DeepVectro",
-    duration: "2023 – 2024 (1 Year)",
-    location: "Remote / On-site",
+    role: "Mobile Application Developer",
+    company: "Shivaay Soft",
+    duration: "Aug 2026 – Present",
+    location: "Surat, Gujarat, India · On-site",
+    description:
+      "Develop and maintain production mobile applications using Flutter and Dart. Integrate REST APIs, handle JWT authentication, analyze API behavior, and drive application stability and performance.",
+    logo: null,
+    link: null
+  },
+  {
+    id: 2,
+    role: "Software Engineer Intern",
+    company: "Hyperlink Infosystem",
+    duration: "Nov 2025 – May 2026 (7 mos)",
+    location: "Ahmedabad, Gujarat, India · On-site",
+    description:
+      "Developed cross-platform mobile applications using Flutter & Dart. Integrated REST APIs & Firebase. Gained hands-on backend experience with Java and Spring Boot.",
+    logo: null,
+    link: null
+  },
+  {
+    id: 3,
+    role: "Mobile Application Developer",
+    company: "DeepVecto",
+    duration: "Aug 2023 – Aug 2024 (1 yr 1 mo)",
+    location: "Surat, Gujarat, India · On-site",
     description: 
-      "Developed real-world mobile applications using Flutter and native Android. Integrated Node.js backends and RESTful APIs while strictly adhering to UI/UX enhancements and app performance tuning.",
+      "Developed and maintained mobile applications using Flutter and Android SDK. Handled backend communication, Firebase, and built LMS and Expense Tracker applications.",
     logo: itSolutionsImg,
     link: "https://www.linkedin.com/in/nikhil-khambhayta/overlay/1729096664467/single-media-viewer/?profileId=ACoAAEjxm1IBOtt-Z-b8-k9ts0nbrXu2W4F_T08"
   }
-  // Add EliteWave Tech here when available
 ];
 
 const Experience = () => {
