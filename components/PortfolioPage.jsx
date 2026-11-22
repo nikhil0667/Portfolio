@@ -13,9 +13,9 @@ const navigation = [
   ['Contact', 'contact']
 ];
 
-function ExternalLink({ href, children, className = '' }) {
+function ExternalLink({ href, children, className = '', ariaLabel }) {
   return (
-    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
+    <a className={className} href={href} target="_blank" rel="noopener noreferrer" aria-label={ariaLabel}>
       {children}
       <span className="sr-only"> (opens in a new tab)</span>
     </a>
@@ -232,7 +232,7 @@ export default function PortfolioPage() {
                     </ul>
                   </details>
                   {project.link && (
-                    <ExternalLink className="project-link" href={project.link}>
+                    <ExternalLink className="project-link" href={project.link} ariaLabel={`Visit live website for ${project.title}`}>
                       Visit live website
                     </ExternalLink>
                   )}
@@ -242,7 +242,7 @@ export default function PortfolioPage() {
           </div>
           <p className="source-note project-note">
             Explore more projects and code samples on my GitHub.{' '}
-            <ExternalLink href="https://github.com/nikhil0667">View my GitHub profile</ExternalLink>.
+            <ExternalLink href="https://github.com/nikhil0667" ariaLabel="View Nikhil Khambhayta GitHub profile">View my GitHub profile</ExternalLink>.
           </p>
         </section>
 
@@ -277,7 +277,7 @@ export default function PortfolioPage() {
                     ))}
                   </ul>
                   {exp.referenceLink && (
-                    <ExternalLink className="project-link" href={exp.referenceLink}>
+                    <ExternalLink className="project-link" href={exp.referenceLink} ariaLabel={`View experience reference for ${exp.role} at ${exp.company}`}>
                       View experience certificate
                     </ExternalLink>
                   )}
@@ -348,12 +348,12 @@ export default function PortfolioPage() {
                   <p>{cert.description}</p>
                   <div className="certificate-links">
                     {cert.link && (
-                      <ExternalLink className="project-link" href={cert.link}>
+                      <ExternalLink className="project-link" href={cert.link} ariaLabel={`View credential for ${cert.title} issued by ${cert.issuer}`}>
                         View credential
                       </ExternalLink>
                     )}
                     {cert.links?.map(link => (
-                      <ExternalLink key={link.url} className="project-link" href={link.url}>
+                      <ExternalLink key={link.url} className="project-link" href={link.url} ariaLabel={`View ${link.label} for ${cert.title}`}>
                         {link.label}
                       </ExternalLink>
                     ))}
@@ -397,13 +397,119 @@ export default function PortfolioPage() {
 
         {/* RÉSUMÉ SECTION */}
         <section id="resume" className="section resume-section">
-          <Heading number="07" label="RÉSUMÉ" title="Professional Background & CV." />
-          <p>
-            A full curriculum vitae detailing professional achievements at Shivaay Soft, Hyperlink Infosystem, and DeepVecto, academic credentials, and project portfolios is available upon request.{' '}
-            <a className="inline-link" href="mailto:nikhilkhambhayta@gmail.com?subject=Resume%20Request%20-%20Nikhil%20Khambhayta">
-              Request my résumé via email
-            </a>.
-          </p>
+          <Heading number="07" label="RÉSUMÉ & CV" title="Curriculum Vitae & Career Highlights.">
+            Comprehensive overview of engineering experience, production architectures, verified credentials, and technical capabilities.
+          </Heading>
+
+          <div className="resume-card-container">
+            {/* Left Column: ATS Executive Summary Card */}
+            <div className="resume-preview-card">
+              <div className="resume-card-header">
+                <div>
+                  <span className="resume-doc-tag">ATS-OPTIMIZED · PDF RESUME</span>
+                  <h3>Nikhil Khambhayta</h3>
+                  <p className="resume-doc-subtitle">Mobile Application Developer &amp; Software Engineer</p>
+                </div>
+                <div className="resume-status-badge">
+                  <span className="status-dot-pulse" />
+                  <span>Available for Roles</span>
+                </div>
+              </div>
+
+              <div className="resume-summary-grid">
+                <div className="resume-summary-col">
+                  <h4>Core Engineering</h4>
+                  <ul>
+                    <li>Mobile Development (Flutter, Dart, Android SDK)</li>
+                    <li>Backend Systems (Java, Spring Boot, REST APIs)</li>
+                    <li>Full-Stack Web (Next.js 16, React 19, TypeScript)</li>
+                    <li>Relational Databases (MySQL, PostgreSQL, JPA)</li>
+                  </ul>
+                </div>
+                <div className="resume-summary-col">
+                  <h4>Experience &amp; Education</h4>
+                  <ul>
+                    <li><strong>Shivaay Soft:</strong> Mobile App Developer (Present)</li>
+                    <li><strong>Hyperlink Infosystem:</strong> Software Engineer Intern</li>
+                    <li><strong>DeepVecto:</strong> Mobile App Developer</li>
+                    <li><strong>Education:</strong> MCA (8.5 CPI, GTU) &amp; BCA (Distinction)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="resume-highlights-row">
+                <div className="highlight-pill">
+                  <strong>2+ Years</strong>
+                  <span>Engineering Exp</span>
+                </div>
+                <div className="highlight-pill">
+                  <strong>8.5 CPI</strong>
+                  <span>MCA Grade</span>
+                </div>
+                <div className="highlight-pill">
+                  <strong>7 Verified</strong>
+                  <span>Certifications</span>
+                </div>
+                <div className="highlight-pill">
+                  <strong>Surat, IN</strong>
+                  <span>Location</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Download & Action Hub */}
+            <div className="resume-actions-card">
+              <div className="resume-action-box">
+                <div className="resume-icon-circle">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <h4>Download Curriculum Vitae</h4>
+                <p>Get a clean, ATS-compliant one-page PDF outlining complete work history, verified skills, and technical accomplishments.</p>
+
+                <div className="resume-cta-buttons">
+                  <a
+                    className="button resume-download-btn"
+                    href="/assets/Nikhil_Khambhayta_Resume.pdf"
+                    download="Nikhil_Khambhayta_Resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    <span>Download CV (PDF)</span>
+                  </a>
+
+                  <a
+                    className="button-secondary"
+                    href="https://www.linkedin.com/in/nikhil-khambhayta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span>LinkedIn (10,200+ Network)</span>
+                  </a>
+
+                  <a
+                    className="inline-email-link"
+                    href="mailto:nikhilkhambhayta@gmail.com?subject=Resume%20Inquiry%20-%20Nikhil%20Khambhayta&body=Hi%20Nikhil,%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20engineering%20opportunity%20or%20request%20your%20latest%20customized%20resume.%0A%0ABest%20regards,"
+                  >
+                    ✉️ Request tailored copy via email
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* CONTACT SECTION */}

@@ -128,7 +128,7 @@ export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
     "description": "Engineered and deployed an enterprise-grade, multilingual corporate web platform for Ved Enterprise, a premier global manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. Architected using Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS to maximize international B2B buyer discovery, trust, and lead generation.",
-    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    "image": "/assets/projects/ved-enterprise.webp",
     "tech": [
       "Next.js 16",
       "React 19",
@@ -151,7 +151,7 @@ export const projects = [
   {
     "title": "Event QR Attendance Management System",
     "description": "An end-to-end role-based event attendance platform designed to automate event registration, secure check-ins, and real-time attendance tracking using QR codes. Features role-based access for Super Admin, Organizers, and Participants.",
-    "image": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop",
+    "image": "/assets/projects/event-qr.webp",
     "tech": [
       "Java",
       "Spring Boot",
@@ -176,7 +176,7 @@ export const projects = [
   {
     "title": "LMS System",
     "description": "Developed a Learning Management System during internship at DeepVecto using Flutter. The app includes login/authentication, course modules, quiz submissions, and progress tracking.",
-    "image": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&h=400&fit=crop",
+    "image": "/assets/projects/lms-system.webp",
     "tech": [
       "Flutter",
       "Dart",
@@ -192,7 +192,7 @@ export const projects = [
   {
     "title": "Android Expense Tracker",
     "description": "Developed a full-featured expense tracking Android app during internship. Features include categorizing expenses, tracking credit & debit, summary charts, and data persistence using SQLite database.",
-    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+    "image": "/assets/projects/expense-tracker.webp",
     "tech": [
       "Android",
       "Java",
@@ -208,7 +208,7 @@ export const projects = [
   {
     "title": "Ride-Sharing App Prototype",
     "description": "Developed an Android app connecting riders and drivers with secure login, real-time GPS tracking, ride requests, and live ride tracking on maps.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop",
+    "image": "/assets/projects/ride-sharing.webp",
     "tech": [
       "Android Studio",
       "Java",
@@ -224,7 +224,7 @@ export const projects = [
   {
     "title": "CampusConnect — College Management App",
     "description": "Mobile app for college management featuring student CRUD operations, timetable viewing, and PDF document downloads for efficient information management.",
-    "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+    "image": "/assets/projects/campus-connect.webp",
     "tech": [
       "Android",
       "Java",
@@ -240,7 +240,7 @@ export const projects = [
   {
     "title": "Fitness Tracker App",
     "description": "Developed a fitness app to track step count, distance, and calories burned in real time using Android’s built-in sensors. Stores historical activity data and presents insights through charts and lists.",
-    "image": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=400&fit=crop",
+    "image": "/assets/projects/fitness-tracker.webp",
     "tech": [
       "Android Studio",
       "Java",
@@ -258,7 +258,7 @@ export const projects = [
   {
     "title": "Media Player App",
     "description": "Created a media player for playing, pausing, and navigating songs from local storage. Supports background playback, dynamic playlists, and custom notification controls.",
-    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&h=400",
+    "image": "/assets/projects/media-player.webp",
     "tech": [
       "Android Studio",
       "Java",
@@ -312,7 +312,7 @@ export const certifications = [
     "date": "Jan 2024",
     "credentialId": "UC-98e50-45-1831-42a0-a329-eedce80d09c6",
     "description": "Mastered production mobile application development with Flutter & Dart, covering state management, reactive interfaces, animations, and cross-platform architecture.",
-    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+    "image": "/assets/projects/udemy-flutter.webp",
     "link": "https://lnkd.in/dq_WyPif"
   },
   {

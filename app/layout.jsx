@@ -1,5 +1,20 @@
+import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import './redesign.css'
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600', '700'],
+})
 
 export const metadata = {
   metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
@@ -26,11 +41,11 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg?v=4', type: 'image/svg+xml' },
+      { url: '/favicon.ico?v=4', sizes: '32x32' },
     ],
-    shortcut: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.svg?v=4',
+    apple: '/apple-touch-icon.png?v=4',
   },
   openGraph: {
     type: 'website',
@@ -173,8 +188,11 @@ export default function RootLayout({ children }) {
             })
           }}
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
+        <link rel="alternate icon" href="/favicon.ico?v=4" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
       </head>
-      <body suppressHydrationWarning>
+      <body className={`${dmSans.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>
