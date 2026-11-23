@@ -20,10 +20,10 @@ export const metadata = {
   metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
   applicationName: 'Nikhil Khambhayta',
   title: {
-    default: 'Nikhil Khambhayta | Software Engineer',
+    default: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
     template: '%s | Nikhil Khambhayta',
   },
-  description: 'Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.',
+  description: 'Nikhil Khambhayta is a Software Engineer building mobile, backend, and web applications with Flutter, Java, Spring Boot, and modern technologies.',
   keywords: 'Nikhil Khambhayta, Software Engineer, Mobile Application Developer, Shivaay Soft, Hyperlink Infosystem, DeepVecto, Flutter Developer, Dart, Java Developer, Spring Boot, REST APIs, Android Developer, Next.js, React, Ved Enterprise, LDRP-ITR, GTU, Surat, Portfolio',
   authors: [{ name: 'Nikhil Khambhayta', url: 'https://nikhilkhambhayta.vercel.app/' }],
   creator: 'Nikhil Khambhayta',
@@ -51,24 +51,24 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Nikhil Khambhayta',
-    title: 'Nikhil Khambhayta | Software Engineer',
-    description: 'Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.',
+    title: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
+    description: 'Nikhil Khambhayta is a Software Engineer building mobile, backend, and web applications with Flutter, Java, Spring Boot, and modern technologies.',
     url: 'https://nikhilkhambhayta.vercel.app/',
     images: [
       {
-        url: 'https://nikhilkhambhayta.vercel.app/assets/hero.png',
-        width: 1200,
-        height: 630,
-        alt: 'Nikhil Khambhayta - Software Engineer & Mobile Developer',
+        url: 'https://nikhilkhambhayta.vercel.app/assets/photo.jpg',
+        width: 1840,
+        height: 1755,
+        alt: 'Portrait of Nikhil Khambhayta',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Khambhayta | Software Engineer',
-    description: 'Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore Nikhil Khambhayta’s projects and experience.',
+    title: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
+    description: 'Nikhil Khambhayta builds mobile, backend, and web applications with Flutter, Java, and Spring Boot.',
     creator: '@NKhambhayt35917',
-    images: ['https://nikhilkhambhayta.vercel.app/assets/hero.png'],
+    images: ['https://nikhilkhambhayta.vercel.app/assets/photo.jpg'],
   },
   verification: {
     google: 'HcdIgNjCKcidU7i7vt_gTUF88Z_ADK2TgWDmFaN8j6k',
@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
                   "@id": "https://nikhilkhambhayta.vercel.app/#website",
                   "url": "https://nikhilkhambhayta.vercel.app/",
                   "name": "Nikhil Khambhayta",
-                  "description": "Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.",
+                  "description": "Nikhil Khambhayta is a Software Engineer building mobile, backend, and web applications with Flutter, Java, Spring Boot, and modern technologies.",
                   "publisher": {
                     "@id": "https://nikhilkhambhayta.vercel.app/#person"
                   }
@@ -112,8 +112,8 @@ export default function RootLayout({ children }) {
                   "@id": "https://nikhilkhambhayta.vercel.app/#person",
                   "name": "Nikhil Khambhayta",
                   "url": "https://nikhilkhambhayta.vercel.app/",
-                  "image": "https://nikhilkhambhayta.vercel.app/assets/hero.png",
-                  "jobTitle": "Mobile Application Developer & Software Engineer",
+                  "image": "https://nikhilkhambhayta.vercel.app/assets/photo.jpg",
+                  "jobTitle": "Mobile Application Developer",
                   "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Surat",

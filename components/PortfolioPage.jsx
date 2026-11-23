@@ -241,6 +241,11 @@ export default function PortfolioPage() {
                       Visit live website
                     </ExternalLink>
                   )}
+                  {project.slug && (
+                    <a className="project-link" href={`/projects/${project.slug}`}>
+                      Read project case study
+                    </a>
+                  )}
                 </div>
               </article>
             ))}

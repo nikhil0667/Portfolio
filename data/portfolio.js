@@ -22,7 +22,7 @@ export const experiences = [
     role: "Software Engineer Intern",
     company: "Hyperlink Infosystem",
     companyType: "Software & Technology Services",
-    employmentType: "Internship · On-site",
+    employmentType: "Internship",
     duration: "Nov 2025 — May 2026 · 7 mos",
     location: "Ahmedabad, Gujarat, India",
     badge: "HI",
@@ -39,7 +39,7 @@ export const experiences = [
     role: "Mobile Application Developer Intern",
     company: "DeepVecto",
     companyType: "Technology Solutions",
-    employmentType: "Full-Time / Internship · 1 yr 1 mo",
+    employmentType: "Internship · On-site",
     duration: "Aug 2023 — Aug 2024",
     location: "Surat, Gujarat, India",
     image: "/assets/IT Solutions.jpg",
@@ -93,22 +93,22 @@ export const education = [
 export const skillGroups = [
   [
     'Mobile Engineering',
-    'Cross-platform and Android application development.',
+    'Cross-platform and Android application development, represented in the LMS, expense tracker, and QR attendance projects.',
     ['Flutter', 'Dart', 'Android SDK', 'Kotlin', 'Provider', 'Firebase', 'Google Maps SDK', 'Android Studio', 'Clean Architecture', 'REST API Integration', 'Offline Persistence']
   ],
   [
     'Backend Engineering',
-    'Server-side application development, API design, and authentication.',
+    'Server-side application development, API design, and authentication across the QR attendance system and production mobile workflows.',
     ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT Authentication', 'Node.js integration', 'JDBC', 'Servlets', 'API Debugging & Root Cause Analysis']
   ],
   [
     'Web Engineering',
-    'Modern web application development and frontend engineering.',
+    'Modern web application development applied to the Ved Enterprise platform and event administration dashboard.',
     ['Next.js (App Router)', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Framer Motion', 'Internationalization', 'Technical SEO']
   ],
   [
     'Data & Engineering Tools',
-    'Relational databases, version control, and delivery workflows.',
+    'Relational databases, version control, and delivery workflows used across the attendance, mobile, and web projects.',
     ['MySQL', 'SQL', 'SQLite', 'Room Database', 'Git & GitHub', 'Agile / Scrum', 'Postman API Testing', 'CI/CD', 'Railway', 'Vercel']
   ]
 ];
@@ -116,8 +116,11 @@ export const skillGroups = [
 export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
+    "slug": "ved-enterprise",
+    "seoTitle": "Next.js Industrial Website for Ved Enterprise",
+    "seoDescription": "A multilingual industrial website built with Next.js, including product catalog pages, hreflang, structured data, sitemaps, and Open Graph metadata.",
     "category": "Production web platform",
-    "description": "Built and deployed a multilingual corporate web platform for Ved Enterprise, a manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. The platform uses Next.js, React, TypeScript, and Tailwind CSS to present products and support international inquiries.",
+    "description": "Built a multilingual Next.js platform for Ved Enterprise, a manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. Implemented structured data, XML sitemaps, hreflang tags, Open Graph metadata, and robots.txt to support search engine discoverability.",
     "image": "/assets/projects/ved-enterprise.jpg",
     "imageAlt": "Ved Enterprise branded preview featuring its pharmaceutical machinery",
     "imageWidth": 1200,
@@ -137,7 +140,7 @@ export const projects = [
     "status": "Production Live",
     "contributions": [
       "Implemented multilingual localization with locale detection and hreflang alternate tags.",
-      "Added technical SEO foundations including Schema.org structured data, XML sitemaps, Open Graph metadata, and robots.txt.",
+      "Implemented technical SEO with structured data, XML sitemaps, multilingual hreflang tags, Open Graph metadata, and robots.txt to support search engine discoverability.",
       "Built the platform with Next.js App Router and React Server Components.",
       "Created a machinery catalog with Embla Carousel, WhatsApp inquiry links, and request-for-quotation workflows.",
       "Deployed on Vercel with automated CI/CD."
@@ -145,10 +148,13 @@ export const projects = [
   },
   {
     "title": "Event QR Attendance Management System",
+    "slug": "event-qr-attendance",
+    "seoTitle": "Spring Boot QR Attendance Management System",
+    "seoDescription": "A role-based event attendance system with a Spring Boot API, Flutter app, React dashboard, MySQL, JWT authentication, and QR check-in.",
     "category": "Full-stack system",
     "context": "Academic project",
     "architecture": "Flutter app + React dashboard → Spring Boot REST API (Controller → Service → Repository) → MySQL",
-    "description": "An end-to-end role-based event attendance platform designed to automate event registration, secure check-ins, and real-time attendance tracking using QR codes. Features role-based access for Super Admin, Organizers, and Participants.",
+    "description": "A role-based event attendance platform for registration, QR check-ins, and attendance tracking, built with a Spring Boot API, Flutter app, React dashboard, and MySQL.",
     "image": "/assets/projects/event-qr.svg",
     "tech": [
       "Java",
@@ -174,9 +180,12 @@ export const projects = [
   },
   {
     "title": "LMS System",
+    "slug": "lms-system",
+    "seoTitle": "Flutter Learning Management System",
+    "seoDescription": "A Flutter learning management app developed during an internship, with authentication, course modules, quiz submissions, and progress tracking.",
     "category": "Mobile application",
     "context": "Internship project",
-    "description": "Developed a Learning Management System during internship at DeepVecto using Flutter. The app includes login/authentication, course modules, quiz submissions, and progress tracking.",
+    "description": "A Flutter learning management app developed during an internship at DeepVecto, with authentication, course modules, quiz submissions, and learner progress tracking.",
     "image": "/assets/projects/lms-system.svg",
     "imageAlt": "Illustrative learning app interface with course progress, lessons, and quiz achievement",
     "tech": [
@@ -193,9 +202,12 @@ export const projects = [
   },
   {
     "title": "Android Expense Tracker",
+    "slug": "android-expense-tracker",
+    "seoTitle": "Android Expense Tracker with SQLite",
+    "seoDescription": "An Android expense tracker built with Java and SQLite, featuring categorized transactions, credit and debit tracking, and summary charts.",
     "category": "Android application",
     "context": "Internship project",
-    "description": "Developed a full-featured expense tracking Android app during internship. Features include categorizing expenses, tracking credit & debit, summary charts, and data persistence using SQLite database.",
+    "description": "An Android expense tracker developed during an internship, with categorized transactions, credit and debit tracking, summary charts, and SQLite persistence.",
     "image": "/assets/projects/expense-tracker.svg",
     "imageAlt": "Illustrative expense tracker app with monthly budget, spending chart, and transactions",
     "tech": [
