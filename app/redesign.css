@@ -169,6 +169,14 @@
     letter-spacing: 0
 }
 
+.project-feature-label {
+    border: 1px solid #59616e;
+    border-radius: 4px;
+    padding: 3px 9px;
+    color: var(--blue);
+    letter-spacing: 0
+}
+
 .project-status {
     letter-spacing: 0;
     border: 1px solid var(--line);
@@ -480,6 +488,16 @@ button:focus-visible {
     font: inherit;
     border: 0;
     cursor: pointer
+}
+
+.contact-email-button {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contact-form .button:disabled {
+    cursor: wait;
+    opacity: .7;
 }
 
 .form-note {

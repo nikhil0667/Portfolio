@@ -143,6 +143,7 @@ export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
     "featured": true,
+    "featureLabel": "Production · Web Platform",
     "slug": "ved-enterprise",
     "seoTitle": "Next.js Industrial Website for Ved Enterprise",
     "seoDescription": "A multilingual industrial website built with Next.js, including product catalog pages, hreflang, structured data, sitemaps, and Open Graph metadata.",
@@ -178,6 +179,7 @@ export const projects = [
   {
     "title": "Event QR Attendance Management System",
     "featured": true,
+    "featureLabel": "Full Stack · Academic Project",
     "slug": "event-qr-attendance",
     "seoTitle": "Spring Boot QR Attendance Management System",
     "seoDescription": "A role-based event attendance system with a Spring Boot API, Flutter app, React dashboard, MySQL, JWT authentication, and QR check-in.",
@@ -213,6 +215,7 @@ export const projects = [
   {
     "title": "LMS System",
     "featured": true,
+    "featureLabel": "Flutter · Internship Project",
     "slug": "lms-system",
     "seoTitle": "Flutter Learning Management System",
     "seoDescription": "A Flutter learning management app developed during an internship, with authentication, course modules, quiz submissions, and progress tracking.",
@@ -238,6 +241,7 @@ export const projects = [
   {
     "title": "Android Expense Tracker",
     "featured": true,
+    "featureLabel": "Android · Internship Project",
     "slug": "android-expense-tracker",
     "seoTitle": "Android Expense Tracker with SQLite",
     "seoDescription": "An Android expense tracker built with Java and SQLite, featuring categorized transactions, credit and debit tracking, and summary charts.",

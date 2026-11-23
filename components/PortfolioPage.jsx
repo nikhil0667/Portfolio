@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { projects, certifications, experiences, education, skillGroups } from '../data/portfolio';
 import ShareButton from './ShareButton';
+import ContactForm from './ContactForm';
 
 const featuredProjects = projects.filter(project => project.featured);
 const additionalProjects = projects.filter(project => !project.featured);
@@ -56,12 +57,13 @@ function ProjectRow({ project, index }) {
       </div>
       <div className="project-body">
         <div className="project-meta">
-          <span>{project.category}</span>
-          {project.featured && <span className="project-featured-label">Featured</span>}
-          {project.context && project.context !== 'Production' && (
+          <span className={project.featureLabel ? 'project-feature-label' : undefined}>
+            {project.featureLabel || project.category}
+          </span>
+          {!project.featureLabel && project.context && project.context !== 'Production' && (
             <span className="project-context">{project.context}</span>
           )}
-          <span className="project-status">{project.status}</span>
+          {!project.featureLabel && <span className="project-status">{project.status}</span>}
         </div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
@@ -225,7 +227,7 @@ export default function PortfolioPage() {
               I’m Nikhil Khambhayta, a Software Engineer focused on Flutter applications and Java/Spring Boot services. At <strong>Shivaay Soft</strong>, I build and maintain mobile features, integrate APIs, and troubleshoot production issues across the application stack.
             </p>
             <p>
-              I look beyond the UI to understand how requests move through authentication, backend logic, and data—so fixes address root causes, not just symptoms.
+              I approach problems end-to-end—from mobile UI and API integration to backend logic, authentication, and database behavior—focusing on root causes rather than surface-level fixes.
             </p>
             <ol className="architecture-flow" aria-label="Application engineering flow">
               <li><strong>Mobile app</strong><span>Flutter · Dart</span></li>
@@ -444,6 +446,9 @@ export default function PortfolioPage() {
             <a className="email" href="mailto:nikhilkhambhayta@gmail.com">
               nikhilkhambhayta@gmail.com
             </a>
+            <a className="button contact-email-button" href="mailto:nikhilkhambhayta@gmail.com">
+              Email me
+            </a>
             <p className="contact-location">Surat, Gujarat, India</p>
             <div className="contact-links">
               <ExternalLink href="https://github.com/nikhil0667">GitHub</ExternalLink>
@@ -451,32 +456,7 @@ export default function PortfolioPage() {
               <ExternalLink href="https://x.com/NKhambhayt35917">X / Twitter</ExternalLink>
             </div>
           </div>
-          <form className="contact-form" action="https://formspree.io/f/mvgrkgay" method="POST">
-            <h3>Send a message</h3>
-            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="form-honeypot" />
-            <input type="hidden" name="_subject" value="Portfolio inquiry for Nikhil Khambhayta" />
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input id="name" name="name" autoComplete="name" required placeholder="Your name" maxLength={200} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input id="email" name="_replyto" type="email" autoComplete="email" required placeholder="you@example.com" />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows={5}
-                required
-                placeholder="Tell me about your project or opportunity"
-                maxLength={10000}
-              />
-            </div>
-            <button className="button" type="submit">Send message</button>
-            <p className="form-note">This form uses Formspree. You’ll receive confirmation after submitting.</p>
-          </form>
+          <ContactForm />
         </section>
       </main>
 

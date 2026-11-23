@@ -5,10 +5,10 @@ export const metadata = {
   metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
   applicationName: 'Nikhil Khambhayta',
   title: {
-    default: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
+    default: 'Nikhil Khambhayta | Software Engineer',
     template: '%s | Nikhil Khambhayta',
   },
-  description: 'Nikhil Khambhayta is a Software Engineer specializing in Flutter, Java, Spring Boot, backend APIs, and modern web application development for production apps.',
+  description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
   keywords: 'Nikhil Khambhayta, Software Engineer, Mobile Application Developer, Shivaay Soft, Hyperlink Infosystem, DeepVecto, Flutter Developer, Dart, Java Developer, Spring Boot, REST APIs, Android Developer, Next.js, React, Ved Enterprise, LDRP-ITR, GTU, Surat, Portfolio',
   authors: [{ name: 'Nikhil Khambhayta', url: 'https://nikhilkhambhayta.vercel.app/' }],
   creator: 'Nikhil Khambhayta',
@@ -36,24 +36,15 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Nikhil Khambhayta',
-    title: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
-    description: 'Nikhil Khambhayta is a Software Engineer specializing in Flutter, Java, Spring Boot, backend APIs, and modern web application development for production apps.',
+    title: 'Nikhil Khambhayta | Software Engineer',
+    description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
     url: 'https://nikhilkhambhayta.vercel.app/',
-    images: [
-      {
-        url: 'https://nikhilkhambhayta.vercel.app/assets/photo.jpg',
-        width: 1840,
-        height: 1755,
-        alt: 'Portrait of Nikhil Khambhayta',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Khambhayta | Software Engineer – Flutter, Java & Spring Boot',
-    description: 'Nikhil Khambhayta specializes in Flutter, Java, Spring Boot, backend APIs, and modern web application development.',
+    title: 'Nikhil Khambhayta | Software Engineer',
+    description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
     creator: '@NKhambhayt35917',
-    images: ['https://nikhilkhambhayta.vercel.app/assets/photo.jpg'],
   },
   verification: {
     google: 'HcdIgNjCKcidU7i7vt_gTUF88Z_ADK2TgWDmFaN8j6k',
@@ -78,7 +69,7 @@ export default function RootLayout({ children }) {
                   "@id": "https://nikhilkhambhayta.vercel.app/#website",
                   "url": "https://nikhilkhambhayta.vercel.app/",
                   "name": "Nikhil Khambhayta",
-                  "description": "Nikhil Khambhayta is a Software Engineer specializing in Flutter, Java, Spring Boot, backend APIs, and modern web application development for production apps.",
+                  "description": "Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.",
                   "publisher": {
                     "@id": "https://nikhilkhambhayta.vercel.app/#person"
                   }
