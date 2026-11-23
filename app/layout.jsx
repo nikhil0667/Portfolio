@@ -1,20 +1,5 @@
-import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import './redesign.css'
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-dm-sans',
-  weight: ['400', '500', '600', '700'],
-})
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
-  weight: ['400', '500', '600', '700'],
-})
 
 export const metadata = {
   metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
@@ -186,7 +171,7 @@ export default function RootLayout({ children }) {
         <link rel="alternate icon" href="/favicon.ico?v=4" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
       </head>
-      <body className={`${dmSans.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
       </body>
     </html>
