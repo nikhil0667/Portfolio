@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { projects, certifications, experiences, education, skillGroups, assessments } from '../data/portfolio';
 import ShareButton from './ShareButton';
 
@@ -73,6 +74,7 @@ export default function PortfolioPage() {
             </p>
             <div className="actions">
               <a className="button" href="#projects">Explore my work</a>
+              <a className="text-link" href="/assets/Nikhil_Khambhayta_Resume.pdf" download="Nikhil_Khambhayta_Resume.pdf">Download resume</a>
               <a className="text-link" href="mailto:nikhilkhambhayta@gmail.com">Get in touch</a>
               <ShareButton />
             </div>
@@ -194,12 +196,15 @@ export default function PortfolioPage() {
             {projects.map((project, index) => (
               <article className="project-row" key={project.title}>
                 <div className="project-visual">
-                  <img
+                  <Image
                     src={project.image}
-                    alt={`Illustration for ${project.title}`}
-                    loading="lazy"
-                    width="600"
-                    height="400"
+                    alt={project.imageAlt || `Illustration for ${project.title}`}
+                    width={project.imageWidth || 600}
+                    height={project.imageHeight || 400}
+                    style={project.imageWidth && project.imageHeight
+                      ? { aspectRatio: `${project.imageWidth} / ${project.imageHeight}` }
+                      : undefined}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1240px) 40vw, 454px"
                   />
                   <span className="project-number">{String(index + 1).padStart(2, '0')}</span>
                 </div>
@@ -259,7 +264,7 @@ export default function PortfolioPage() {
                 <div>
                   <div className="experience-company">
                     {exp.image ? (
-                      <img src={exp.image} width="60" height="60" alt={`${exp.company} reference`} loading="lazy" />
+                      <Image src={exp.image} width={60} height={60} alt={`${exp.company} reference`} />
                     ) : (
                       <div className="company-icon-badge" aria-hidden="true">{exp.badge || 'EXP'}</div>
                     )}
@@ -339,7 +344,7 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   aria-label={`Open certificate for ${cert.title}`}
                 >
-                  <img src={cert.image} alt={cert.title} width="240" height="170" loading="lazy" />
+                  <Image src={cert.image} alt={cert.title} width={240} height={170} sizes="240px" />
                 </a>
                 <div>
                   <p className="eyebrow">{cert.date} {cert.credentialId ? `· ID: ${cert.credentialId}` : ''}</p>
@@ -530,6 +535,8 @@ export default function PortfolioPage() {
           </div>
           <form className="contact-form" action="https://formspree.io/f/mvgrkgay" method="POST">
             <h3>Send a message</h3>
+            <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="form-honeypot" />
+            <input type="hidden" name="_subject" value="Portfolio inquiry for Nikhil Khambhayta" />
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input id="name" name="name" autoComplete="name" required placeholder="Your name" maxLength={200} />

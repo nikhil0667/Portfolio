@@ -128,7 +128,10 @@ export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
     "description": "Engineered and deployed an enterprise-grade, multilingual corporate web platform for Ved Enterprise, a premier global manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. Architected using Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS to maximize international B2B buyer discovery, trust, and lead generation.",
-    "image": "/assets/projects/ved-enterprise.webp",
+    "image": "/assets/projects/ved-enterprise.jpg",
+    "imageAlt": "Ved Enterprise branded preview featuring its pharmaceutical machinery",
+    "imageWidth": 1200,
+    "imageHeight": 630,
     "tech": [
       "Next.js 16",
       "React 19",

@@ -20,10 +20,10 @@ export const metadata = {
   metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
   applicationName: 'Nikhil Khambhayta',
   title: {
-    default: 'Nikhil Khambhayta | Software Engineer | Flutter, Java & Spring Boot Developer',
+    default: 'Nikhil Khambhayta | Software Engineer',
     template: '%s | Nikhil Khambhayta',
   },
-  description: 'Official portfolio of Nikhil Khambhayta, Mobile Application Developer at Shivaay Soft (Surat) and MCA graduate (8.5 CPI) from LDRP-ITR/GTU. Specializing in Flutter, Dart, Java, Spring Boot, REST APIs, and Next.js full-stack systems.',
+  description: 'Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.',
   keywords: 'Nikhil Khambhayta, Software Engineer, Mobile Application Developer, Shivaay Soft, Hyperlink Infosystem, DeepVecto, Flutter Developer, Dart, Java Developer, Spring Boot, REST APIs, Android Developer, Next.js, React, Ved Enterprise, LDRP-ITR, GTU, Surat, Portfolio',
   authors: [{ name: 'Nikhil Khambhayta', url: 'https://nikhilkhambhayta.vercel.app/' }],
   creator: 'Nikhil Khambhayta',
@@ -51,8 +51,8 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Nikhil Khambhayta',
-    title: 'Nikhil Khambhayta | Software Engineer | Flutter, Java & Spring Boot Developer',
-    description: 'Explore the portfolio of Nikhil Khambhayta: Mobile Application Developer at Shivaay Soft, MCA graduate (8.5 CPI). Building production Flutter mobile apps, Java Spring Boot backends, and Next.js platforms.',
+    title: 'Nikhil Khambhayta | Software Engineer',
+    description: 'Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.',
     url: 'https://nikhilkhambhayta.vercel.app/',
     images: [
       {
@@ -65,8 +65,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Khambhayta | Software Engineer | Flutter, Java & Spring Boot Developer',
-    description: 'Mobile Application Developer at Shivaay Soft & MCA Graduate (8.5 CPI). Production Flutter apps, Java Spring Boot REST APIs, and Next.js web applications.',
+    title: 'Nikhil Khambhayta | Software Engineer',
+    description: 'Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore Nikhil Khambhayta’s projects and experience.',
     creator: '@NKhambhayt35917',
     images: ['https://nikhilkhambhayta.vercel.app/assets/hero.png'],
   },
@@ -93,13 +93,7 @@ export default function RootLayout({ children }) {
                   "@id": "https://nikhilkhambhayta.vercel.app/#website",
                   "url": "https://nikhilkhambhayta.vercel.app/",
                   "name": "Nikhil Khambhayta",
-                  "alternateName": [
-                    "Nikhil Khambhayta Portfolio",
-                    "NikhilKhambhayta",
-                    "nikhilkhambhayta.vercel.app",
-                    "Nikhil Khambhayta Software Engineer"
-                  ],
-                  "description": "Portfolio of Nikhil Khambhayta, Software Engineer and Mobile Application Developer at Shivaay Soft specializing in Flutter, Java, Spring Boot, and Next.js.",
+                  "description": "Nikhil Khambhayta is a Software Engineer in Surat building Flutter apps, Java Spring Boot APIs, and modern web platforms. Explore his projects and experience.",
                   "publisher": {
                     "@id": "https://nikhilkhambhayta.vercel.app/#person"
                   }

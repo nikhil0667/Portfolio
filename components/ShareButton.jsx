@@ -1,10 +1,47 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export default function ShareButton() {
   const [copied, setCopied] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const modalRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const triggerRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    closeButtonRef.current?.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+      if (event.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled])'
+        );
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+
+  const closeModal = () => {
+    setIsOpen(false);
+    window.requestAnimationFrame(() => triggerRef.current?.focus());
+  };
 
   const shareData = {
     title: 'Nikhil Khambhayta | Software Engineer',
@@ -70,6 +107,7 @@ export default function ShareButton() {
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         className="share-trigger-btn"
         onClick={handleNativeShare}
@@ -86,14 +124,22 @@ export default function ShareButton() {
       </button>
 
       {isOpen && (
-        <div className="share-modal-overlay" onClick={() => setIsOpen(false)}>
-          <div className="share-modal-box" onClick={(e) => e.stopPropagation()}>
+        <div className="share-modal-overlay" onMouseDown={closeModal}>
+          <div
+            ref={modalRef}
+            className="share-modal-box"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="share-dialog-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
             <div className="share-modal-header">
-              <h3>Share Nikhil’s Profile</h3>
+              <h3 id="share-dialog-title">Share Nikhil’s Profile</h3>
               <button
+                ref={closeButtonRef}
                 type="button"
                 className="share-modal-close"
-                onClick={() => setIsOpen(false)}
+                onClick={closeModal}
                 aria-label="Close share dialog"
               >
                 ✕
