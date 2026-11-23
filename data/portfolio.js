@@ -94,33 +94,53 @@ export const skillGroups = [
   [
     'Mobile Engineering',
     'Cross-platform and Android application development, represented in the LMS, expense tracker, and QR attendance projects.',
-    ['Flutter', 'Dart', 'Android SDK', 'Kotlin', 'Provider', 'Firebase', 'Google Maps SDK', 'Android Studio', 'Clean Architecture', 'REST API Integration', 'Offline Persistence']
+    ['Flutter', 'Dart', 'Android SDK', 'Firebase', 'REST API integration', 'Clean Architecture'],
+    [
+      { label: 'Event QR Attendance System', slug: 'event-qr-attendance' },
+      { label: 'LMS System', slug: 'lms-system' },
+      { label: 'Android Expense Tracker', slug: 'android-expense-tracker' }
+    ]
   ],
   [
     'Backend Engineering',
     'Server-side application development, API design, and authentication across the QR attendance system and production mobile workflows.',
-    ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT Authentication', 'Node.js integration', 'JDBC', 'Servlets', 'API Debugging & Root Cause Analysis']
+    ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT authentication'],
+    [
+      { label: 'Event QR Attendance System', slug: 'event-qr-attendance' }
+    ]
   ],
   [
     'Web Engineering',
     'Modern web application development applied to the Ved Enterprise platform and event administration dashboard.',
-    ['Next.js (App Router)', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Framer Motion', 'Internationalization', 'Technical SEO']
+    ['Next.js App Router', 'React', 'TypeScript', 'Tailwind CSS', 'Internationalization', 'Technical SEO'],
+    [
+      { label: 'Ved Enterprise', slug: 'ved-enterprise' },
+      { label: 'Event QR Attendance System', slug: 'event-qr-attendance' }
+    ]
   ],
   [
     'Data & Engineering Tools',
     'Relational databases, version control, and delivery workflows used across the attendance, mobile, and web projects.',
-    ['MySQL', 'SQL', 'SQLite', 'Room Database', 'Git & GitHub', 'Agile / Scrum', 'Postman API Testing', 'CI/CD', 'Railway', 'Vercel']
+    ['MySQL', 'SQL', 'SQLite', 'Git & GitHub', 'Postman', 'Vercel'],
+    [
+      { label: 'Event QR Attendance System', slug: 'event-qr-attendance' },
+      { label: 'Android Expense Tracker', slug: 'android-expense-tracker' },
+      { label: 'Ved Enterprise', slug: 'ved-enterprise' }
+    ]
   ]
 ];
 
 export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
+    "featured": true,
     "slug": "ved-enterprise",
     "seoTitle": "Next.js Industrial Website for Ved Enterprise",
     "seoDescription": "A multilingual industrial website built with Next.js, including product catalog pages, hreflang, structured data, sitemaps, and Open Graph metadata.",
     "category": "Production web platform",
-    "description": "Built a multilingual Next.js platform for Ved Enterprise, a manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. Implemented structured data, XML sitemaps, hreflang tags, Open Graph metadata, and robots.txt to support search engine discoverability.",
+    "description": "A multilingual Next.js platform for Ved Enterprise, a manufacturer and exporter of pharmaceutical blister packing machinery and spare parts.",
+    "purpose": "Present machinery and spare parts to international buyers and support product inquiries and quotation requests.",
+    "delivery": "Production site deployed on Vercel with multilingual product discovery and inquiry workflows.",
     "image": "/assets/projects/ved-enterprise.jpg",
     "imageAlt": "Ved Enterprise branded preview featuring its pharmaceutical machinery",
     "imageWidth": 1200,
@@ -148,13 +168,16 @@ export const projects = [
   },
   {
     "title": "Event QR Attendance Management System",
+    "featured": true,
     "slug": "event-qr-attendance",
     "seoTitle": "Spring Boot QR Attendance Management System",
     "seoDescription": "A role-based event attendance system with a Spring Boot API, Flutter app, React dashboard, MySQL, JWT authentication, and QR check-in.",
     "category": "Full-stack system",
     "context": "Academic project",
     "architecture": "Flutter app + React dashboard → Spring Boot REST API (Controller → Service → Repository) → MySQL",
-    "description": "A role-based event attendance platform for registration, QR check-ins, and attendance tracking, built with a Spring Boot API, Flutter app, React dashboard, and MySQL.",
+    "description": "A role-based event attendance platform built with a Spring Boot API, Flutter app, React dashboard, and MySQL.",
+    "purpose": "Manage event registration and attendance with QR-based check-ins and role-based access.",
+    "delivery": "Developed a connected platform for Super Admins, Organizers, and Participants.",
     "image": "/assets/projects/event-qr.svg",
     "tech": [
       "Java",
@@ -185,7 +208,9 @@ export const projects = [
     "seoDescription": "A Flutter learning management app developed during an internship, with authentication, course modules, quiz submissions, and progress tracking.",
     "category": "Mobile application",
     "context": "Internship project",
-    "description": "A Flutter learning management app developed during an internship at DeepVecto, with authentication, course modules, quiz submissions, and learner progress tracking.",
+    "description": "A Flutter learning management app developed during an internship at DeepVecto.",
+    "purpose": "Provide authenticated access to course modules, quiz submissions, and learner progress tracking.",
+    "delivery": "Developed the app as an internship project with authentication, course, quiz, and progress features.",
     "image": "/assets/projects/lms-system.svg",
     "imageAlt": "Illustrative learning app interface with course progress, lessons, and quiz achievement",
     "tech": [
@@ -202,12 +227,15 @@ export const projects = [
   },
   {
     "title": "Android Expense Tracker",
+    "featured": true,
     "slug": "android-expense-tracker",
     "seoTitle": "Android Expense Tracker with SQLite",
     "seoDescription": "An Android expense tracker built with Java and SQLite, featuring categorized transactions, credit and debit tracking, and summary charts.",
     "category": "Android application",
     "context": "Internship project",
-    "description": "An Android expense tracker developed during an internship, with categorized transactions, credit and debit tracking, summary charts, and SQLite persistence.",
+    "description": "An Android expense tracker developed during an internship using Java and SQLite.",
+    "purpose": "Record categorized expenses, track credit and debit activity, and review summary charts.",
+    "delivery": "Developed an Android app with transaction categories, summary charts, and local SQLite persistence.",
     "image": "/assets/projects/expense-tracker.svg",
     "imageAlt": "Illustrative expense tracker app with monthly budget, spending chart, and transactions",
     "tech": [
@@ -307,7 +335,7 @@ export const certifications = [
     "issuer": "HackerRank",
     "date": "Aug 2024",
     "credentialId": "759a50c960f2",
-    "description": "Strengthened core programming logic and algorithmic problem-solving through timed challenges covering loops, arrays, conditions, and recursion.",
+    "description": "HackerRank Java credential covering programming fundamentals and problem-solving.",
     "image": "/assets/hackerank.png",
     "link": "https://www.hackerrank.com/certificates/759a50c960f2"
   },
@@ -317,7 +345,7 @@ export const certifications = [
     "issuer": "HackerRank",
     "date": "Jan 2025",
     "credentialId": "427F92620AAB",
-    "description": "Demonstrated proficiency in writing complex SQL queries, database filtering, joins, aggregation, and relational data management under constraints.",
+    "description": "HackerRank SQL credential covering query writing, filtering, joins, and aggregation.",
     "image": "/assets/hackerank.png",
     "link": "https://www.hackerrank.com/certificates/427F92620AAB"
   },
@@ -326,7 +354,7 @@ export const certifications = [
     "title": "Java Course",
     "issuer": "GeeksforGeeks",
     "date": "May 2025",
-    "description": "Completed an intensive 4-week course covering Java fundamentals, object-oriented programming (OOP), exception handling, collections, and practical backend techniques.",
+    "description": "Four-week course covering Java fundamentals, object-oriented programming, exceptions, and collections.",
     "image": "/assets/gfg.png",
     "link": "https://media.geeksforgeeks.org/courses/certificates/d67075ecf44a2328f425867c44a01794.pdf"
   },
@@ -336,7 +364,7 @@ export const certifications = [
     "issuer": "Udemy",
     "date": "Jan 2024",
     "credentialId": "UC-98e50-45-1831-42a0-a329-eedce80d09c6",
-    "description": "Mastered production mobile application development with Flutter & Dart, covering state management, reactive interfaces, animations, and cross-platform architecture.",
+    "description": "Course covering Flutter and Dart, state management, animations, and cross-platform app development.",
     "image": "/assets/projects/udemy-flutter.webp",
     "link": "https://lnkd.in/dq_WyPif"
   },
@@ -345,7 +373,7 @@ export const certifications = [
     "title": "Java Certification",
     "issuer": "One Roadmap & United Latino Students Association",
     "date": "Mar 2025",
-    "description": "Strengthened practical backend development skills, API management, and Java server-side programming principles for real-world projects.",
+    "description": "Java certification covering backend development, API management, and server-side programming.",
     "image": "/assets/gfg.png"
   },
   {
@@ -354,7 +382,7 @@ export const certifications = [
     "issuer": "UniAthena & Cambridge International Qualifications, UK",
     "date": "Jan 2025",
     "credentialId": "7580-8507-4144",
-    "description": "Foundational Python programming focusing on data types, control flow, functions, and OOP logic. Achieved a final score of 84/100.",
+    "description": "Course covering Python data types, control flow, functions, and object-oriented programming. Final score: 84/100.",
     "image": "/assets/uni.png",
     "links": [
       {
@@ -373,7 +401,7 @@ export const certifications = [
     "issuer": "HCL GUVI, IITM Research Park",
     "date": "Apr 2023",
     "credentialId": "tz4982658P6i81D75v",
-    "description": "Comprehensive foundation in computer programming, algorithmic problem-solving, and Python concepts certified by IITM Research Park incubated GUVI.",
+    "description": "Introductory programming course covering Python fundamentals and problem-solving.",
     "image": "/assets/uni.png"
   }
 ];

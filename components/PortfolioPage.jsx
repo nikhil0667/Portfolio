@@ -2,6 +2,11 @@ import Image from 'next/image';
 import { projects, certifications, experiences, education, skillGroups } from '../data/portfolio';
 import ShareButton from './ShareButton';
 
+const orderedProjects = [
+  ...projects.filter(project => project.featured),
+  ...projects.filter(project => !project.featured),
+];
+
 const navigation = [
   ['Home', 'home'],
   ['About', 'about'],
@@ -65,9 +70,13 @@ export default function PortfolioPage() {
         <section className="hero" id="home">
           <div className="hero-copy">
             <p className="eyebrow">NIKHIL KHAMBHAYTA · SOFTWARE ENGINEER</p>
-            <h1>Mobile applications.<br /><span>Scalable backends.</span></h1>
+            <h1 className="hero-headline">
+              Software Engineer<br />
+              <span>| Flutter, Java &amp; Spring Boot |</span><br />
+              Building Production-Ready Applications
+            </h1>
             <p className="intro">
-              I build production-ready mobile apps with Flutter & Dart, scalable backend systems with Java & Spring Boot, and high-performance modern web platforms.
+              I build production Flutter apps and solve problems end to end across the mobile app, API, backend, and data layers.
             </p>
             <p className="hero-context">
               Mobile Application Developer at <strong>Shivaay Soft</strong>. Prior experience at <strong>Hyperlink Infosystem</strong> and <strong>DeepVecto</strong>. MCA graduate (8.5 CPI) from <strong>LDRP-ITR, Gujarat Technological University</strong>.
@@ -104,7 +113,7 @@ export default function PortfolioPage() {
                 <code>
                   <span className="code-keyword">class</span> <span className="code-class">SoftwareEngineer</span> {'{\n'}
                   {'  '}<span className="code-keyword">final</span> String name = <span className="code-string">&apos;Nikhil Khambhayta&apos;</span>;{'\n'}
-                  {'  '}<span className="code-keyword">final</span> String role = <span className="code-string">&apos;Mobile App Developer&apos;</span>;{'\n'}
+                  {'  '}<span className="code-keyword">final</span> String role = <span className="code-string">&apos;Software Engineer&apos;</span>;{'\n'}
                   {'  '}<span className="code-keyword">final</span> String company = <span className="code-string">&apos;Shivaay Soft&apos;</span>;{'\n'}
                   {'  '}<span className="code-keyword">final</span> String education = <span className="code-string">&apos;MCA (8.5 CPI) · GTU&apos;</span>;{'\n'}
                   {'\n'}
@@ -193,8 +202,8 @@ export default function PortfolioPage() {
             Production web platforms, enterprise systems, and mobile applications with full architectural details.
           </Heading>
           <div className="project-list">
-            {projects.map((project, index) => (
-              <article className="project-row" key={project.title}>
+            {orderedProjects.map((project, index) => (
+              <article className={`project-row${project.featured ? ' featured-project' : ''}`} key={project.title}>
                 <div className="project-visual">
                   <Image
                     src={project.image}
@@ -211,6 +220,7 @@ export default function PortfolioPage() {
                 <div className="project-body">
                   <div className="project-meta">
                     <span>{project.category}</span>
+                    {project.featured && <span className="project-featured-label">Featured</span>}
                     {project.context && project.context !== 'Production' && (
                       <span className="project-context">{project.context}</span>
                     )}
@@ -342,15 +352,9 @@ export default function PortfolioPage() {
           <div className="certificate-list">
             {certifications.map(cert => (
               <article key={cert.id} className="certificate-row">
-                <a
-                  className="certificate-image"
-                  href={cert.image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open certificate for ${cert.title}`}
-                >
-                  <Image src={cert.image} alt={cert.title} width={240} height={170} sizes="240px" />
-                </a>
+                <div className="certificate-image">
+                  <Image src={cert.image} alt={`${cert.issuer} logo or course artwork`} width={240} height={170} sizes="240px" />
+                </div>
                 <div>
                   <p className="eyebrow">{cert.date} {cert.credentialId ? `· ID: ${cert.credentialId}` : ''}</p>
                   <h3>{cert.title}</h3>
@@ -367,6 +371,9 @@ export default function PortfolioPage() {
                         {link.label}
                       </ExternalLink>
                     ))}
+                    {!cert.link && !cert.links?.length && (
+                      <span className="certificate-link-status">Credential link unavailable</span>
+                    )}
                   </div>
                 </div>
               </article>
@@ -378,7 +385,7 @@ export default function PortfolioPage() {
         <section id="skills" className="section">
           <Heading number="06" label="TECHNICAL SKILLS" title="The tools behind the work." />
           <div className="skills-grid">
-            {skillGroups.map(([title, description, skills], index) => (
+            {skillGroups.map(([title, description, skills, evidence], index) => (
               <article key={title} className="skill-group">
                 <p className="eyebrow">0{index + 1}</p>
                 <h3>{title}</h3>
@@ -386,6 +393,12 @@ export default function PortfolioPage() {
                 <div className="tags">
                   {skills.map(skill => (
                     <span key={skill}>{skill}</span>
+                  ))}
+                </div>
+                <div className="skill-evidence">
+                  <strong>Project evidence</strong>
+                  {evidence.map(project => (
+                    <a key={project.slug} href={`/projects/${project.slug}`}>{project.label}</a>
                   ))}
                 </div>
               </article>
@@ -406,7 +419,7 @@ export default function PortfolioPage() {
                 <div>
                   <span className="resume-doc-tag">PDF RESUME</span>
                   <h3>Nikhil Khambhayta</h3>
-                  <p className="resume-doc-subtitle">Mobile Application Developer &amp; Software Engineer</p>
+                  <p className="resume-doc-subtitle">Software Engineer | Flutter, Java &amp; Spring Boot</p>
                 </div>
               </div>
 
@@ -423,10 +436,10 @@ export default function PortfolioPage() {
                 <div className="resume-summary-col">
                   <h4>Experience &amp; Education</h4>
                   <ul>
-                    <li><strong>Shivaay Soft:</strong> Mobile App Developer (Present)</li>
-                    <li><strong>Hyperlink Infosystem:</strong> Software Engineer Intern</li>
-                    <li><strong>DeepVecto:</strong> Mobile App Developer</li>
-                    <li><strong>Education:</strong> MCA (8.5 CPI, GTU) &amp; BCA (Distinction)</li>
+                    <li><strong>Shivaay Soft:</strong> Mobile Application Developer · Aug 2026–Present</li>
+                    <li><strong>Hyperlink Infosystem:</strong> Software Engineer Intern · Nov 2025–May 2026</li>
+                    <li><strong>DeepVecto:</strong> Mobile Application Developer Intern · Aug 2023–Aug 2024</li>
+                    <li><strong>Education:</strong> MCA (Aug 2024–Apr 2026, 8.5 CPI) &amp; BCA (Nov 2021–Feb 2024, Distinction)</li>
                   </ul>
                 </div>
               </div>

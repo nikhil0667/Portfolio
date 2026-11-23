@@ -79,14 +79,14 @@ export default function ShareButton() {
       'VERSION:3.0',
       'FN:Nikhil Khambhayta',
       'N:Khambhayta;Nikhil;;;',
-      'TITLE:Mobile Application Developer & Software Engineer',
+      'TITLE:Software Engineer',
       'ORG:Shivaay Soft',
       'EMAIL;TYPE=INTERNET,WORK:nikhilkhambhayta@gmail.com',
       'URL:https://nikhilkhambhayta.vercel.app',
       'ADR;TYPE=WORK:;;Surat;Gujarat;;India',
       'X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/nikhil-khambhayta',
       'X-SOCIALPROFILE;TYPE=github:https://github.com/nikhil0667',
-      'NOTE:Mobile App Developer (Flutter, Dart, Java, Spring Boot, Next.js). MCA from LDRP-ITR (GTU).',
+      'NOTE:Software Engineer focused on Flutter, Dart, Java, Spring Boot, and modern web development. MCA from LDRP-ITR (GTU).',
       'END:VCARD'
     ].join('\r\n');
 

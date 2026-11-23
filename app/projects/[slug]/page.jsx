@@ -73,6 +73,11 @@ export default async function ProjectCaseStudy({ params }) {
             {project.tech.map(technology => <span key={technology}>{technology}</span>)}
           </div>
 
+          <section className="project-case-section">
+            <h2>Purpose and scope</h2>
+            <p>{project.purpose}</p>
+          </section>
+
           <Image
             className="project-case-image"
             src={project.image}
@@ -91,10 +96,15 @@ export default async function ProjectCaseStudy({ params }) {
           )}
 
           <section className="project-case-section">
-            <h2>Implementation</h2>
+            <h2>My contributions</h2>
             <ul>
               {project.contributions.map(contribution => <li key={contribution}>{contribution}</li>)}
             </ul>
+          </section>
+
+          <section className="project-case-section">
+            <h2>Delivery</h2>
+            <p>{project.delivery}</p>
           </section>
 
           <div className="project-case-actions">

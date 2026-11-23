@@ -36,6 +36,25 @@
   padding: 0.25rem 0.65rem;
 }
 
+.skill-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  margin-top: 1rem;
+  color: var(--muted, #a4abb7);
+  font-size: 0.8rem;
+}
+
+.skill-evidence strong {
+  flex-basis: 100%;
+}
+
+.skill-evidence a {
+  color: var(--blue, #7aabff);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 600px) {
   .skills-categories-grid {
     grid-template-columns: 1fr;

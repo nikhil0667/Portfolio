@@ -13,12 +13,18 @@ const Skills = () => {
         </div>
 
         <div className="skills-categories-grid">
-          {skillGroups.map(([title, description, skills]) => (
+          {skillGroups.map(([title, description, skills, evidence]) => (
             <article key={title} className="skill-category-card glass-panel">
               <h3>{title}</h3>
               <p>{description}</p>
               <div className="skill-tags">
                 {skills.map(skill => <span key={skill}>{skill}</span>)}
+              </div>
+              <div className="skill-evidence">
+                <strong>Project evidence</strong>
+                {evidence.map(project => (
+                  <a key={project.slug} href={`/projects/${project.slug}`}>{project.label}</a>
+                ))}
               </div>
             </article>
           ))}
