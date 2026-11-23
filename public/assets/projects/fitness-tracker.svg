@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs><linearGradient id="bg" x1="50" y1="30" x2="1140" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#263025"/><stop offset="1" stop-color="#101717"/></linearGradient><filter id="shadow" x="340" y="8" width="520" height="790" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="20"/></filter></defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/><circle cx="1040" cy="150" r="270" fill="#B7F36B" opacity=".09"/><circle cx="128" cy="700" r="255" fill="#28C8A3" opacity=".08"/>
+  <rect x="354" y="16" width="492" height="780" rx="38" fill="#000" opacity=".45" filter="url(#shadow)"/><rect x="382" y="28" width="436" height="744" rx="34" fill="#151D1A" stroke="#435144" stroke-width="3"/>
+  <text x="424" y="88" fill="#F1F7EE" font-family="Arial,sans-serif" font-size="24" font-weight="700">Activity</text><circle cx="769" cy="79" r="19" fill="#26352B"/><circle cx="769" cy="78" r="9" stroke="#B7F36B" stroke-width="2"/><path d="M769 71v7l5 3" stroke="#B7F36B" stroke-width="2" stroke-linecap="round"/>
+  <text x="424" y="134" fill="#91A18D" font-family="Arial,sans-serif" font-size="14">TODAY, MONDAY 12</text>
+  <circle cx="600" cy="292" r="112" stroke="#2F3B32" stroke-width="14"/><circle cx="600" cy="292" r="112" stroke="#B7F36B" stroke-width="14" stroke-linecap="round" stroke-dasharray="580 704" transform="rotate(-90 600 292)"/>
+  <circle cx="600" cy="292" r="83" stroke="#2B4039" stroke-width="12"/><circle cx="600" cy="292" r="83" stroke="#39D6A7" stroke-width="12" stroke-linecap="round" stroke-dasharray="390 522" transform="rotate(-90 600 292)"/>
+  <text x="600" y="281" text-anchor="middle" fill="#F3F8EF" font-family="Arial,sans-serif" font-size="39" font-weight="700">8,426</text><text x="600" y="310" text-anchor="middle" fill="#92A18E" font-family="Arial,sans-serif" font-size="14">STEPS TODAY</text><text x="600" y="338" text-anchor="middle" fill="#B7F36B" font-family="Arial,sans-serif" font-size="13">84% OF GOAL</text>
+  <rect x="424" y="438" width="352" height="105" rx="18" fill="#1D2822"/><text x="446" y="469" fill="#91A18D" font-family="Arial,sans-serif" font-size="13">WEEKLY ACTIVITY</text>
+  <path d="M461 514v-19m43 19v-38m43 38v-29m43 29v-51m43 51v-34m43 34v-44m43 44v-58" stroke="#B7F36B" stroke-width="16" stroke-linecap="round"/><path d="M461 514h258" stroke="#37453A" stroke-width="2"/>
+  <rect x="424" y="568" width="166" height="112" rx="17" fill="#1D2822"/><rect x="610" y="568" width="166" height="112" rx="17" fill="#1D2822"/>
+  <circle cx="452" cy="598" r="12" fill="#2B4034"/><path d="M452 590v8l6 4" stroke="#B7F36B" stroke-width="2" stroke-linecap="round"/>
+  <text x="444" y="636" fill="#F1F7EE" font-family="Arial,sans-serif" font-size="23" font-weight="700">6.2 km</text><text x="444" y="660" fill="#91A18D" font-family="Arial,sans-serif" font-size="12">DISTANCE</text>
+  <circle cx="638" cy="598" r="12" fill="#3C2E26"/><path d="M638 590c-7 9-7 12 0 15s7-6 0-15Z" fill="#FF9D59"/>
+  <text x="630" y="636" fill="#F1F7EE" font-family="Arial,sans-serif" font-size="23" font-weight="700">342 kcal</text><text x="630" y="660" fill="#91A18D" font-family="Arial,sans-serif" font-size="12">CALORIES</text>
+  <rect x="424" y="704" width="352" height="44" rx="15" fill="#B7F36B"/><text x="600" y="732" text-anchor="middle" fill="#16200F" font-family="Arial,sans-serif" font-size="14" font-weight="700">VIEW ACTIVITY HISTORY</text>
+  <text x="80" y="350" fill="#F3F8EF" font-family="Arial,sans-serif" font-size="20" font-weight="700">MOVE EVERY DAY</text><text x="80" y="384" fill="#A4B29D" font-family="Arial,sans-serif" font-size="16">Steps, distance, and</text><text x="80" y="408" fill="#A4B29D" font-family="Arial,sans-serif" font-size="16">calories at a glance.</text>
+  <rect x="80" y="440" width="172" height="42" rx="21" fill="#29362B"/><circle cx="103" cy="461" r="7" fill="#B7F36B"/><text x="121" y="467" fill="#E2EDD9" font-family="Arial,sans-serif" font-size="13">SENSOR TRACKING</text>
+</svg>

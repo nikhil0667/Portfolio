@@ -154,7 +154,7 @@ export const projects = [
   {
     "title": "Event QR Attendance Management System",
     "description": "An end-to-end role-based event attendance platform designed to automate event registration, secure check-ins, and real-time attendance tracking using QR codes. Features role-based access for Super Admin, Organizers, and Participants.",
-    "image": "/assets/projects/event-qr.webp",
+    "image": "/assets/projects/event-qr.svg",
     "tech": [
       "Java",
       "Spring Boot",
@@ -168,6 +168,7 @@ export const projects = [
       "Vercel"
     ],
     "status": "Developed Platform",
+    "imageAlt": "Illustrative QR attendance dashboard with attendee check-in status and scan code",
     "contributions": [
       "Architected 3-layer backend in Spring Boot (Controller, Service, Repository) with MySQL and JPA/Hibernate.",
       "Implemented secure JWT authentication with token expiry, auto-logout, and role-based permissions (Super Admin, Organizer, Participant).",
@@ -179,7 +180,8 @@ export const projects = [
   {
     "title": "LMS System",
     "description": "Developed a Learning Management System during internship at DeepVecto using Flutter. The app includes login/authentication, course modules, quiz submissions, and progress tracking.",
-    "image": "/assets/projects/lms-system.webp",
+    "image": "/assets/projects/lms-system.svg",
+    "imageAlt": "Illustrative learning app interface with course progress, lessons, and quiz achievement",
     "tech": [
       "Flutter",
       "Dart",
@@ -195,7 +197,8 @@ export const projects = [
   {
     "title": "Android Expense Tracker",
     "description": "Developed a full-featured expense tracking Android app during internship. Features include categorizing expenses, tracking credit & debit, summary charts, and data persistence using SQLite database.",
-    "image": "/assets/projects/expense-tracker.webp",
+    "image": "/assets/projects/expense-tracker.svg",
+    "imageAlt": "Illustrative expense tracker app with monthly budget, spending chart, and transactions",
     "tech": [
       "Android",
       "Java",
@@ -211,7 +214,8 @@ export const projects = [
   {
     "title": "Ride-Sharing App Prototype",
     "description": "Developed an Android app connecting riders and drivers with secure login, real-time GPS tracking, ride requests, and live ride tracking on maps.",
-    "image": "/assets/projects/ride-sharing.webp",
+    "image": "/assets/projects/ride-sharing.svg",
+    "imageAlt": "Illustrative ride-sharing app showing a live route, driver details, and arrival estimate",
     "tech": [
       "Android Studio",
       "Java",
@@ -227,7 +231,8 @@ export const projects = [
   {
     "title": "CampusConnect — College Management App",
     "description": "Mobile app for college management featuring student CRUD operations, timetable viewing, and PDF document downloads for efficient information management.",
-    "image": "/assets/projects/campus-connect.webp",
+    "image": "/assets/projects/campus-connect.svg",
+    "imageAlt": "Illustrative campus app with class timetable and student resources",
     "tech": [
       "Android",
       "Java",
@@ -243,7 +248,8 @@ export const projects = [
   {
     "title": "Fitness Tracker App",
     "description": "Developed a fitness app to track step count, distance, and calories burned in real time using Android’s built-in sensors. Stores historical activity data and presents insights through charts and lists.",
-    "image": "/assets/projects/fitness-tracker.webp",
+    "image": "/assets/projects/fitness-tracker.svg",
+    "imageAlt": "Illustrative fitness tracker app with step goal, weekly activity, distance, and calories",
     "tech": [
       "Android Studio",
       "Java",
@@ -261,7 +267,8 @@ export const projects = [
   {
     "title": "Media Player App",
     "description": "Created a media player for playing, pausing, and navigating songs from local storage. Supports background playback, dynamic playlists, and custom notification controls.",
-    "image": "/assets/projects/media-player.webp",
+    "image": "/assets/projects/media-player.svg",
+    "imageAlt": "Illustrative music player app with album art, playback controls, and an upcoming track",
     "tech": [
       "Android Studio",
       "Java",

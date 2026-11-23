@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1090" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#172033"/><stop offset="1" stop-color="#090D17"/></linearGradient>
+    <linearGradient id="art" x1="400" y1="240" x2="750" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#35D6C5"/></linearGradient>
+    <filter id="shadow" x="350" y="12" width="500" height="790" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="20"/></filter>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/>
+  <circle cx="186" cy="145" r="220" fill="#6D5CE7" opacity=".12"/><circle cx="1060" cy="700" r="300" fill="#21C6B3" opacity=".08"/>
+  <rect x="372" y="42" width="456" height="730" rx="48" fill="#000" opacity=".5" filter="url(#shadow)"/>
+  <rect x="398" y="28" width="404" height="744" rx="46" fill="#080B12" stroke="#42485A" stroke-width="3"/>
+  <rect x="416" y="64" width="368" height="674" rx="32" fill="#111725"/>
+  <rect x="550" y="43" width="100" height="10" rx="5" fill="#343A49"/>
+  <text x="452" y="108" fill="#929DB3" font-family="Arial,sans-serif" font-size="16" letter-spacing="2">NOW PLAYING</text>
+  <circle cx="755" cy="101" r="18" fill="#202A3A"/><path d="M748 101h14m-7-7v14" stroke="#DDE5F4" stroke-width="2" stroke-linecap="round"/>
+  <rect x="472" y="140" width="256" height="256" rx="28" fill="url(#art)"/>
+  <circle cx="600" cy="268" r="84" fill="#0F172A" opacity=".72"/><circle cx="600" cy="268" r="25" fill="#D8D6FF"/>
+  <path d="M516 269c32-49 57 49 89 0s57 49 89 0" stroke="#D8D6FF" stroke-width="7" stroke-linecap="round"/>
+  <text x="600" y="441" text-anchor="middle" fill="#F4F6FC" font-family="Arial,sans-serif" font-size="30" font-weight="700">Midnight Drive</text>
+  <text x="600" y="472" text-anchor="middle" fill="#8E9BB0" font-family="Arial,sans-serif" font-size="18">The Night Signals</text>
+  <rect x="454" y="510" width="292" height="5" rx="2.5" fill="#374155"/><rect x="454" y="510" width="112" height="5" rx="2.5" fill="#7B6CF6"/>
+  <circle cx="566" cy="512.5" r="7" fill="#F4F6FC"/>
+  <text x="454" y="540" fill="#8995AA" font-family="Arial,sans-serif" font-size="13">1:24</text><text x="746" y="540" text-anchor="end" fill="#8995AA" font-family="Arial,sans-serif" font-size="13">3:48</text>
+  <path d="M520 591l-12-12 12-12m-12 12h24" stroke="#C1CAD9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="600" cy="579" r="34" fill="#8A75F6"/><path d="M592 564v30l24-15-24-15Z" fill="#FFF"/>
+  <path d="M680 567v24m0-24 18-5v24m-18-8 18-5" stroke="#C1CAD9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="454" y="637" width="292" height="1" fill="#293448"/>
+  <text x="454" y="676" fill="#F4F6FC" font-family="Arial,sans-serif" font-size="16" font-weight="700">UP NEXT</text>
+  <circle cx="477" cy="710" r="16" fill="#234F62"/><path d="M468 710c6-11 11 11 18 0" stroke="#67D8CA" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="506" y="707" fill="#E4EAF4" font-family="Arial,sans-serif" font-size="14">Open Roads</text><text x="506" y="726" fill="#8692A8" font-family="Arial,sans-serif" font-size="12">Echo Avenue</text>
+  <text x="80" y="344" fill="#F4F6FC" font-family="Arial,sans-serif" font-size="20" font-weight="700">YOUR LIBRARY</text>
+  <text x="80" y="378" fill="#9AA8BE" font-family="Arial,sans-serif" font-size="16">Playlists that go</text><text x="80" y="402" fill="#9AA8BE" font-family="Arial,sans-serif" font-size="16">where you do.</text>
+  <rect x="80" y="434" width="188" height="42" rx="21" fill="#20283B"/><circle cx="103" cy="455" r="7" fill="#35D6C5"/><text x="121" y="461" fill="#DDE5F4" font-family="Arial,sans-serif" font-size="13">LOCAL PLAYLIST</text>
+</svg>
