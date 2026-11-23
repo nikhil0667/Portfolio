@@ -38,7 +38,7 @@ function createSimplePDF() {
 
     { text: "KEY PROJECTS", size: 11, bold: true, y: 363 },
     { text: "Ved Enterprise - Global Multilingual Industrial Platform (https://vedenterprise.vercel.app)", size: 9.5, bold: true, y: 348 },
-    { text: "* Next.js 16, React 19, TypeScript, Tailwind CSS, 21+ languages (i18n), 95+ Lighthouse.", size: 9, y: 336 },
+    { text: "* Next.js, React, TypeScript, Tailwind CSS, multilingual support, technical SEO, and Vercel.", size: 9, y: 336 },
 
     { text: "Event QR Attendance Management System", size: 9.5, bold: true, y: 320 },
     { text: "* Spring Boot (3-layer), Flutter, React, MySQL, JWT Authentication, Railway & Vercel.", size: 9, y: 308 },

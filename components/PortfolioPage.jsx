@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { projects, certifications, experiences, education, skillGroups, assessments } from '../data/portfolio';
+import { projects, certifications, experiences, education, skillGroups } from '../data/portfolio';
 import ShareButton from './ShareButton';
 
 const navigation = [
@@ -116,7 +116,7 @@ export default function PortfolioPage() {
                   {'\n    '}<span className="code-string">&apos;Database (MySQL)&apos;</span>,
                   {'\n  '}];{'\n'}
                   {'\n'}
-                  {'  '}<span className="code-keyword">final</span> status = <span className="code-status">&apos;🟢 Open to High-Impact Roles&apos;</span>;{'\n'}
+                  {'  '}<span className="code-keyword">final</span> stack = <span className="code-status">&apos;Flutter · Java · Spring Boot · Next.js&apos;</span>;{'\n'}
                   {'}'}
                 </code>
               </pre>
@@ -127,8 +127,8 @@ export default function PortfolioPage() {
                 <small>Companies</small>
               </div>
               <div className="console-stat">
-                <strong>21+</strong>
-                <small>Languages (i18n)</small>
+                <strong>4</strong>
+                <small>Skill domains</small>
               </div>
               <div className="console-stat">
                 <strong>7</strong>
@@ -210,15 +210,10 @@ export default function PortfolioPage() {
                 </div>
                 <div className="project-body">
                   <div className="project-meta">
-                    <span>
-                      {index === 0
-                        ? 'PRODUCTION WEB PLATFORM'
-                        : index === 1
-                        ? 'FULL-STACK ENTERPRISE SYSTEM'
-                        : index === 2
-                        ? 'CROSS-PLATFORM MOBILE'
-                        : 'ANDROID APPLICATION'}
-                    </span>
+                    <span>{project.category}</span>
+                    {project.context && project.context !== 'Production' && (
+                      <span className="project-context">{project.context}</span>
+                    )}
                     <span className="project-status">{project.status}</span>
                   </div>
                   <h3>{project.title}</h3>
@@ -229,7 +224,12 @@ export default function PortfolioPage() {
                     ))}
                   </div>
                   <details className="project-details">
-                    <summary>Contribution & implementation</summary>
+                    <summary>Technical contributions</summary>
+                    {project.architecture && (
+                      <p className="project-architecture">
+                        <strong>Architecture:</strong> {project.architecture}
+                      </p>
+                    )}
                     <ul>
                       {project.contributions.map(detail => (
                         <li key={detail}>{detail}</li>
@@ -333,7 +333,7 @@ export default function PortfolioPage() {
 
         {/* CERTIFICATIONS SECTION */}
         <section id="certificates" className="section">
-          <Heading number="05" label="CERTIFICATIONS" title="Verified Licenses & Certifications." />
+          <Heading number="05" label="CERTIFICATIONS" title="Certifications & Courses." />
           <div className="certificate-list">
             {certifications.map(cert => (
               <article key={cert.id} className="certificate-row">
@@ -386,24 +386,12 @@ export default function PortfolioPage() {
               </article>
             ))}
           </div>
-          <details className="assessment">
-            <summary>Core Competency Assessments</summary>
-            <p>Self-assessed proficiency across primary engineering domains and production workflows.</p>
-            <div className="assessment-grid">
-              {assessments.map(([name, value]) => (
-                <div key={name}>
-                  <span>{name}</span>
-                  <span>{value}%</span>
-                </div>
-              ))}
-            </div>
-          </details>
         </section>
 
         {/* RÉSUMÉ SECTION */}
         <section id="resume" className="section resume-section">
           <Heading number="07" label="RÉSUMÉ & CV" title="Curriculum Vitae & Career Highlights.">
-            Comprehensive overview of engineering experience, production architectures, verified credentials, and technical capabilities.
+            Overview of engineering experience, project contributions, education, and technical capabilities.
           </Heading>
 
           <div className="resume-card-container">
@@ -411,13 +399,9 @@ export default function PortfolioPage() {
             <div className="resume-preview-card">
               <div className="resume-card-header">
                 <div>
-                  <span className="resume-doc-tag">ATS-OPTIMIZED · PDF RESUME</span>
+                  <span className="resume-doc-tag">PDF RESUME</span>
                   <h3>Nikhil Khambhayta</h3>
                   <p className="resume-doc-subtitle">Mobile Application Developer &amp; Software Engineer</p>
-                </div>
-                <div className="resume-status-badge">
-                  <span className="status-dot-pulse" />
-                  <span>Available for Roles</span>
                 </div>
               </div>
 
@@ -444,16 +428,16 @@ export default function PortfolioPage() {
 
               <div className="resume-highlights-row">
                 <div className="highlight-pill">
-                  <strong>2+ Years</strong>
-                  <span>Engineering Exp</span>
+                  <strong>Flutter + Java</strong>
+                  <span>Engineering focus</span>
                 </div>
                 <div className="highlight-pill">
                   <strong>8.5 CPI</strong>
                   <span>MCA Grade</span>
                 </div>
                 <div className="highlight-pill">
-                  <strong>7 Verified</strong>
-                  <span>Certifications</span>
+                  <strong>7 Listed</strong>
+                  <span>Courses &amp; credentials</span>
                 </div>
                 <div className="highlight-pill">
                   <strong>Surat, IN</strong>
@@ -475,7 +459,7 @@ export default function PortfolioPage() {
                   </svg>
                 </div>
                 <h4>Download Curriculum Vitae</h4>
-                <p>Get a clean, ATS-compliant one-page PDF outlining complete work history, verified skills, and technical accomplishments.</p>
+                <p>Get a concise PDF résumé outlining work history, technical skills, education, and project contributions.</p>
 
                 <div className="resume-cta-buttons">
                   <a
@@ -502,7 +486,7 @@ export default function PortfolioPage() {
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                     </svg>
-                    <span>LinkedIn (10,200+ Network)</span>
+                    <span>LinkedIn profile</span>
                   </a>
 
                   <a

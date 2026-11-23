@@ -8,7 +8,7 @@ import './Projects.css';
 const projects = [
   {
     title: 'Ved Enterprise – Corporate Website',
-    description: 'Multilingual corporate website for a global blister packing machine spare parts exporter. Built with Next.js 16, React, TypeScript, and Tailwind CSS, featuring 20+ language support, 93+ Lighthouse performance, and advanced SEO.',
+    description: 'Multilingual corporate website for a global blister packing machine spare parts exporter. Built with Next.js, React, TypeScript, and Tailwind CSS, with product catalogs, internationalization, and technical SEO.',
     image: '/assets/projects/ved-enterprise.jpg',
     tech: ['Next.js 16', 'React', 'TypeScript', 'Tailwind CSS', 'SEO', 'i18n'],
     link: 'https://vedenterprise.vercel.app',

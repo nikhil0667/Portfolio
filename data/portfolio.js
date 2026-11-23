@@ -9,7 +9,7 @@ export const experiences = [
     duration: "Aug 2026 — Present",
     location: "Surat, Gujarat, India",
     badge: "SS",
-    description: "Developing and maintaining production mobile applications using Flutter and Dart, integrating REST APIs, and driving application stability, performance, and user experience.",
+    description: "Build and maintain Flutter applications, integrate REST APIs and JWT-backed workflows, and troubleshoot issues across app, API, and data layers.",
     contributions: [
       "Develop and maintain production mobile applications using Flutter and Dart with clean architecture.",
       "Integrate complex REST APIs handling authentication, authorization (JWT), application state, and backend-driven workflows.",
@@ -26,7 +26,7 @@ export const experiences = [
     duration: "Nov 2025 — May 2026 · 7 mos",
     location: "Ahmedabad, Gujarat, India",
     badge: "HI",
-    description: "Developed cross-platform mobile applications using Flutter and Dart, integrated REST APIs and Firebase, and gained practical backend engineering experience with Java and Spring Boot.",
+    description: "Developed Flutter applications for client requirements, integrated REST APIs and Firebase, and gained hands-on experience with Java and Spring Boot backend workflows.",
     contributions: [
       "Developed cross-platform mobile applications using Flutter and Dart for real-world client requirements in an agile environment.",
       "Integrated REST APIs and Firebase services into production-oriented mobile applications.",
@@ -44,7 +44,7 @@ export const experiences = [
     location: "Surat, Gujarat, India",
     image: "/assets/IT Solutions.jpg",
     badge: "DV",
-    description: "Developed and maintained mobile applications using Flutter and Android SDK, integrating Node.js backends and RESTful APIs while optimizing UI/UX performance.",
+    description: "Developed Flutter and Android applications, integrated REST APIs and Firebase, and contributed to LMS and expense-tracking projects.",
     contributions: [
       "Developed and maintained mobile applications using Flutter and Android SDK.",
       "Integrated RESTful APIs, Node.js backends, and handled backend communication.",
@@ -92,67 +92,62 @@ export const education = [
 
 export const skillGroups = [
   [
-    'Mobile Application Development',
-    'Primary engineering expertise building production-ready cross-platform & native apps.',
-    ['Flutter', 'Dart', 'Android SDK', 'Java', 'Kotlin', 'State Management (Provider)', 'Firebase', 'Google Maps SDK', 'Android Studio', 'Clean Architecture', 'REST API Integration', 'Offline Persistence']
+    'Mobile Engineering',
+    'Cross-platform and Android application development.',
+    ['Flutter', 'Dart', 'Android SDK', 'Kotlin', 'Provider', 'Firebase', 'Google Maps SDK', 'Android Studio', 'Clean Architecture', 'REST API Integration', 'Offline Persistence']
   ],
   [
-    'Backend & REST API Engineering',
-    'Robust server-side application logic, microservices, and database interactions.',
-    ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'RESTful API Design', 'JWT Authentication', 'Node.js integration', 'JDBC', 'Servlets', 'API Debugging & Root Cause Analysis']
+    'Backend Engineering',
+    'Server-side application development, API design, and authentication.',
+    ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT Authentication', 'Node.js integration', 'JDBC', 'Servlets', 'API Debugging & Root Cause Analysis']
   ],
   [
-    'Modern Web & Frontend',
-    'High-performance, responsive web applications and SEO-optimized platforms.',
-    ['Next.js 16 (App Router)', 'React 19', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Framer Motion', 'i18n Localization (21+ Languages)', 'Technical SEO']
+    'Web Engineering',
+    'Modern web application development and frontend engineering.',
+    ['Next.js (App Router)', 'React', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 / CSS3', 'Framer Motion', 'Internationalization', 'Technical SEO']
   ],
   [
-    'Databases & Engineering Workflow',
-    'Relational schema design, queries, and production version control.',
-    ['MySQL', 'SQL', 'SQLite', 'Room Database', 'Git & GitHub', 'Agile / Scrum', 'Postman API Testing', 'Railway', 'Vercel Deployment', 'Performance Optimization']
+    'Data & Engineering Tools',
+    'Relational databases, version control, and delivery workflows.',
+    ['MySQL', 'SQL', 'SQLite', 'Room Database', 'Git & GitHub', 'Agile / Scrum', 'Postman API Testing', 'CI/CD', 'Railway', 'Vercel']
   ]
-];
-
-export const assessments = [
-  ['Flutter & Dart', 95],
-  ['Java & OOP', 90],
-  ['REST API Development & Integration', 90],
-  ['Spring Boot & Backend', 85],
-  ['Next.js & React', 88],
-  ['SQL & MySQL Database', 85],
-  ['Android SDK', 85],
-  ['HTML / CSS / JavaScript', 90]
 ];
 
 export const projects = [
   {
     "title": "Ved Enterprise – Global Multilingual Industrial & B2B Machinery Platform",
-    "description": "Engineered and deployed an enterprise-grade, multilingual corporate web platform for Ved Enterprise, a premier global manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. Architected using Next.js 16 (App Router), React 19, TypeScript, and Tailwind CSS to maximize international B2B buyer discovery, trust, and lead generation.",
+    "category": "Production web platform",
+    "description": "Built and deployed a multilingual corporate web platform for Ved Enterprise, a manufacturer and exporter of pharmaceutical blister packing machinery and spare parts. The platform uses Next.js, React, TypeScript, and Tailwind CSS to present products and support international inquiries.",
     "image": "/assets/projects/ved-enterprise.jpg",
     "imageAlt": "Ved Enterprise branded preview featuring its pharmaceutical machinery",
     "imageWidth": 1200,
     "imageHeight": 630,
+    "context": "Production",
+    "architecture": "Next.js App Router → React Server Components → multilingual product catalog → inquiry workflows",
     "tech": [
-      "Next.js 16",
-      "React 19",
+      "Next.js",
+      "React",
       "TypeScript",
       "Tailwind CSS",
-      "i18n (21+ Languages)",
+      "Internationalization",
       "Technical SEO",
       "Vercel"
     ],
     "link": "https://vedenterprise.vercel.app",
     "status": "Production Live",
     "contributions": [
-      "Automated 21+ language localization (i18n) with geo-aware locale detection and hreflang alternate tags for international export markets.",
-      "Engineered advanced technical SEO: custom Schema.org (JSON-LD), dynamic XML sitemaps, Open Graph cards, and robots.txt for Google AI Overviews and Search rankings.",
-      "Achieved 95+ Lighthouse Performance and a perfect 100 in SEO, Accessibility, and Best Practices with sub-second LCP using React Server Components.",
-      "Designed an interactive machinery catalog with Embla Carousel, direct WhatsApp Business inquiry integration, and high-converting RFQ workflows.",
-      "Deployed on Vercel with automated CI/CD and custom domain edge routing."
+      "Implemented multilingual localization with locale detection and hreflang alternate tags.",
+      "Added technical SEO foundations including Schema.org structured data, XML sitemaps, Open Graph metadata, and robots.txt.",
+      "Built the platform with Next.js App Router and React Server Components.",
+      "Created a machinery catalog with Embla Carousel, WhatsApp inquiry links, and request-for-quotation workflows.",
+      "Deployed on Vercel with automated CI/CD."
     ]
   },
   {
     "title": "Event QR Attendance Management System",
+    "category": "Full-stack system",
+    "context": "Academic project",
+    "architecture": "Flutter app + React dashboard → Spring Boot REST API (Controller → Service → Repository) → MySQL",
     "description": "An end-to-end role-based event attendance platform designed to automate event registration, secure check-ins, and real-time attendance tracking using QR codes. Features role-based access for Super Admin, Organizers, and Participants.",
     "image": "/assets/projects/event-qr.svg",
     "tech": [
@@ -179,6 +174,8 @@ export const projects = [
   },
   {
     "title": "LMS System",
+    "category": "Mobile application",
+    "context": "Internship project",
     "description": "Developed a Learning Management System during internship at DeepVecto using Flutter. The app includes login/authentication, course modules, quiz submissions, and progress tracking.",
     "image": "/assets/projects/lms-system.svg",
     "imageAlt": "Illustrative learning app interface with course progress, lessons, and quiz achievement",
@@ -196,6 +193,8 @@ export const projects = [
   },
   {
     "title": "Android Expense Tracker",
+    "category": "Android application",
+    "context": "Internship project",
     "description": "Developed a full-featured expense tracking Android app during internship. Features include categorizing expenses, tracking credit & debit, summary charts, and data persistence using SQLite database.",
     "image": "/assets/projects/expense-tracker.svg",
     "imageAlt": "Illustrative expense tracker app with monthly budget, spending chart, and transactions",
@@ -213,6 +212,7 @@ export const projects = [
   },
   {
     "title": "Ride-Sharing App Prototype",
+    "category": "Android prototype",
     "description": "Developed an Android app connecting riders and drivers with secure login, real-time GPS tracking, ride requests, and live ride tracking on maps.",
     "image": "/assets/projects/ride-sharing.svg",
     "imageAlt": "Illustrative ride-sharing app showing a live route, driver details, and arrival estimate",
@@ -230,6 +230,7 @@ export const projects = [
   },
   {
     "title": "CampusConnect — College Management App",
+    "category": "Android application",
     "description": "Mobile app for college management featuring student CRUD operations, timetable viewing, and PDF document downloads for efficient information management.",
     "image": "/assets/projects/campus-connect.svg",
     "imageAlt": "Illustrative campus app with class timetable and student resources",
@@ -247,6 +248,7 @@ export const projects = [
   },
   {
     "title": "Fitness Tracker App",
+    "category": "Android application",
     "description": "Developed a fitness app to track step count, distance, and calories burned in real time using Android’s built-in sensors. Stores historical activity data and presents insights through charts and lists.",
     "image": "/assets/projects/fitness-tracker.svg",
     "imageAlt": "Illustrative fitness tracker app with step goal, weekly activity, distance, and calories",
@@ -266,6 +268,7 @@ export const projects = [
   },
   {
     "title": "Media Player App",
+    "category": "Android application",
     "description": "Created a media player for playing, pausing, and navigating songs from local storage. Supports background playback, dynamic playlists, and custom notification controls.",
     "image": "/assets/projects/media-player.svg",
     "imageAlt": "Illustrative music player app with album art, playback controls, and an upcoming track",

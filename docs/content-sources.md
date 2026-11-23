@@ -8,7 +8,7 @@ Sources inspected: active app, root components, Vite components, legacy HTML and
 - About and engineering focus: `components/About.jsx` and the active About section in `legacy/index.html`. Core Java, Collections, Advanced Java, Servlets, JSP, JDBC, DSA, OOP, MVC, REST, backend, mobile, and database work retained.
 - Experience: one documented DeepVectro internship, 2023–2024, Remote / On-site; original internship letter link and asset retained. EliteWave Tech exists only as an empty comment, so no employment is claimed.
 - Three certifications: all dates, descriptions, images and original certificate/result links retained. Python score is 84/100.
-- Skills: all eight active self-assessed percentages from `components/Skills.jsx` retained and explicitly labeled self-assessments. Additional technologies documented in project descriptions are grouped by domain.
+- Skills: presented by mobile, backend, web, and data/tooling domains; self-assessed percentage ratings are not displayed.
 - Contact: original email, India / remote location, GitHub, LinkedIn, X and existing Formspree endpoint retained. No messages were sent during validation. Provider delivery and redirect handling require provider access to verify; the site does not claim delivery before submission.
 
 ## Missing or ambiguous source material

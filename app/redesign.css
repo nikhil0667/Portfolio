@@ -161,6 +161,14 @@
     margin-bottom: 17px
 }
 
+.project-context {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 3px 9px;
+    color: var(--muted);
+    letter-spacing: 0
+}
+
 .project-status {
     letter-spacing: 0;
     border: 1px solid var(--line);
@@ -188,8 +196,7 @@
     margin-top: 18px
 }
 
-.project-details summary,
-.assessment summary {
+.project-details summary {
     font-size: 16px
 }
 
@@ -197,6 +204,12 @@
     color: var(--muted);
     padding-left: 22px;
     line-height: 1.8
+}
+
+.project-architecture {
+    border-left: 2px solid var(--blue);
+    padding-left: 12px;
+    color: var(--muted)
 }
 
 .project-note {
@@ -365,35 +378,6 @@
 
 .skill-group .tags {
     margin-top: 20px
-}
-
-.assessment {
-    margin-top: 30px;
-    padding-top: 24px
-}
-
-.assessment>p {
-    font-size: 14px;
-    color: var(--muted)
-}
-
-.assessment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 30px
-}
-
-.assessment-grid>div {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    border-bottom: 1px solid var(--line);
-    padding: 12px 0;
-    font-size: 14px
-}
-
-.assessment-grid>div>span:last-child {
-    color: var(--blue)
 }
 
 .resume-section>p {
@@ -668,8 +652,7 @@ main section {
     margin-top: 18px
 }
 
-.project-details summary,
-.assessment summary {
+.project-details summary {
     font-size: 16px
 }
 
@@ -845,35 +828,6 @@ main section {
 
 .skill-group .tags {
     margin-top: 20px
-}
-
-.assessment {
-    margin-top: 30px;
-    padding-top: 24px
-}
-
-.assessment>p {
-    font-size: 14px;
-    color: var(--muted)
-}
-
-.assessment-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px 30px
-}
-
-.assessment-grid>div {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    border-bottom: 1px solid var(--line);
-    padding: 12px 0;
-    font-size: 14px
-}
-
-.assessment-grid>div>span:last-child {
-    color: var(--blue)
 }
 
 .resume-section>p {
@@ -1258,7 +1212,6 @@ main section {
     }
 
     .skills-grid,
-    .assessment-grid,
     .contact {
         grid-template-columns: 1fr
     }
@@ -1596,28 +1549,6 @@ main section {
     color: var(--muted);
     font-size: 14px;
     margin: 0;
-}
-
-.resume-status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.25);
-    font-size: 12px;
-    color: #4ade80;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.status-dot-pulse {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 10px #22c55e;
 }
 
 .resume-summary-grid {
