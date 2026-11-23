@@ -1793,3 +1793,114 @@ main section {
         letter-spacing: -1.2px;
     }
 }
+
+.architecture-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    list-style: none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.architecture-flow li {
+    position: relative;
+    display: grid;
+    gap: 5px;
+    padding: 15px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.architecture-flow li + li::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    color: var(--blue);
+    transform: translate(-50%, -50%);
+}
+
+.architecture-flow strong {
+    font-family: var(--font-space-grotesk), sans-serif;
+    font-size: 15px;
+}
+
+.architecture-flow span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.more-projects {
+    margin-top: 30px;
+}
+
+.more-projects > summary {
+    color: var(--blue);
+}
+
+.more-projects > summary span {
+    float: right;
+    color: var(--muted);
+    font: 14px var(--font-dm-sans), sans-serif;
+}
+
+.more-projects .project-list {
+    margin-top: 20px;
+}
+
+.resume-simple-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.resume-simple-card > p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.resume-simple-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.resume-simple-actions .button-secondary {
+    white-space: nowrap;
+}
+
+@media(max-width: 900px) {
+    .architecture-flow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .architecture-flow li + li::before {
+        content: none;
+    }
+}
+
+@media(max-width: 600px) {
+    .resume-simple-card {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px 20px;
+    }
+
+    .resume-simple-actions {
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .resume-simple-actions > * {
+        text-align: center;
+    }
+}

@@ -2,10 +2,8 @@ import Image from 'next/image';
 import { projects, certifications, experiences, education, skillGroups } from '../data/portfolio';
 import ShareButton from './ShareButton';
 
-const orderedProjects = [
-  ...projects.filter(project => project.featured),
-  ...projects.filter(project => !project.featured),
-];
+const featuredProjects = projects.filter(project => project.featured);
+const additionalProjects = projects.filter(project => !project.featured);
 
 const navigation = [
   ['Home', 'home'],
@@ -40,6 +38,66 @@ function Heading({ number, label, title, children }) {
   );
 }
 
+function ProjectRow({ project, index }) {
+  return (
+    <article className={`project-row${project.featured ? ' featured-project' : ''}`} key={project.title}>
+      <div className="project-visual">
+        <Image
+          src={project.image}
+          alt={project.imageAlt || `Illustration for ${project.title}`}
+          width={project.imageWidth || 600}
+          height={project.imageHeight || 400}
+          style={project.imageWidth && project.imageHeight
+            ? { aspectRatio: `${project.imageWidth} / ${project.imageHeight}` }
+            : undefined}
+          sizes="(max-width: 600px) 100vw, (max-width: 1240px) 40vw, 454px"
+        />
+        <span className="project-number">{String(index + 1).padStart(2, '0')}</span>
+      </div>
+      <div className="project-body">
+        <div className="project-meta">
+          <span>{project.category}</span>
+          {project.featured && <span className="project-featured-label">Featured</span>}
+          {project.context && project.context !== 'Production' && (
+            <span className="project-context">{project.context}</span>
+          )}
+          <span className="project-status">{project.status}</span>
+        </div>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <div className="tags" aria-label="Technologies">
+          {project.tech.map(tech => (
+            <span key={tech}>{tech}</span>
+          ))}
+        </div>
+        <details className="project-details">
+          <summary>Technical contributions</summary>
+          {project.architecture && (
+            <p className="project-architecture">
+              <strong>Architecture:</strong> {project.architecture}
+            </p>
+          )}
+          <ul>
+            {project.contributions.map(detail => (
+              <li key={detail}>{detail}</li>
+            ))}
+          </ul>
+        </details>
+        {project.link && (
+          <ExternalLink className="project-link" href={project.link} ariaLabel={`Visit live website for ${project.title}`}>
+            Visit live website
+          </ExternalLink>
+        )}
+        {project.slug && (
+          <a className="project-link" href={`/projects/${project.slug}`}>
+            Read project case study
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
 export default function PortfolioPage() {
   return (
     <>
@@ -69,17 +127,16 @@ export default function PortfolioPage() {
         {/* HERO SECTION */}
         <section className="hero" id="home">
           <div className="hero-copy">
-            <p className="eyebrow">NIKHIL KHAMBHAYTA · SOFTWARE ENGINEER</p>
+            <p className="eyebrow">NIKHIL KHAMBHAYTA · MOBILE &amp; BACKEND ENGINEER</p>
             <h1 className="hero-headline">
-              Software Engineer<br />
-              <span>| Flutter, Java &amp; Spring Boot |</span><br />
-              Building Production-Ready Applications
+              Mobile applications.<br />
+              <span>Scalable backends.</span>
             </h1>
             <p className="intro">
-              I build production Flutter apps and solve problems end to end across the mobile app, API, backend, and data layers.
+              Software Engineer specializing in Flutter mobile development and Java Spring Boot backend systems. I build production-ready applications, integrate REST APIs, and solve problems across the application stack.
             </p>
             <p className="hero-context">
-              Mobile Application Developer at <strong>Shivaay Soft</strong>. Prior experience at <strong>Hyperlink Infosystem</strong> and <strong>DeepVecto</strong>. MCA graduate (8.5 CPI) from <strong>LDRP-ITR, Gujarat Technological University</strong>.
+              Currently working as a <strong>Mobile Application Developer at Shivaay Soft</strong>.
             </p>
             <div className="actions">
               <a className="button" href="#projects">Explore my work</a>
@@ -161,23 +218,21 @@ export default function PortfolioPage() {
         <section id="about" className="section about">
           <div>
             <p className="eyebrow">01 / ABOUT ME</p>
-            <h2>End-to-end flow<br /><span>from app to database.</span></h2>
+            <h2>Mobile apps.<br /><span>Backend thinking.</span></h2>
           </div>
           <div className="about-copy">
             <p>
-              I’m Nikhil Khambhayta, a Software Engineer focused on building production-ready mobile, backend, and web applications. Currently, I work as a <strong>Mobile Application Developer at Shivaay Soft</strong>, where I develop production mobile apps using Flutter & Dart, integrate REST APIs, and resolve complex production challenges.
+              I’m Nikhil Khambhayta, a Software Engineer focused on Flutter applications and Java/Spring Boot services. At <strong>Shivaay Soft</strong>, I build and maintain mobile features, integrate APIs, and troubleshoot production issues across the application stack.
             </p>
             <p>
-              I approach engineering problems across the complete application flow:
-              <br />
-              <strong style={{ color: 'var(--blue)' }}>Mobile App → API → Backend → Database → Response</strong>
+              I look beyond the UI to understand how requests move through authentication, backend logic, and data—so fixes address root causes, not just symptoms.
             </p>
-            <p>
-              Rather than only patching visible symptoms, I focus on identifying root causes by analyzing API behavior, logs, permissions, authentication (JWT), backend business logic, and database transactions.
-            </p>
-            <p>
-              I hold an <strong>MCA (Master of Computer Applications) with an 8.5 CPI</strong> from LDRP Institute of Technology & Research (GTU) and a <strong>BCA with First Class with Distinction</strong>. My previous engineering experience includes a 7-month internship at <strong>Hyperlink Infosystem</strong> and over a year at <strong>DeepVecto</strong>.
-            </p>
+            <ol className="architecture-flow" aria-label="Application engineering flow">
+              <li><strong>Mobile app</strong><span>Flutter · Dart</span></li>
+              <li><strong>REST API</strong><span>Integration · Auth</span></li>
+              <li><strong>Backend</strong><span>Java · Spring Boot</span></li>
+              <li><strong>Database</strong><span>MySQL · JPA</span></li>
+            </ol>
             <div className="skill-groups">
               <div>
                 <h3>Production Mobile Engineering</h3>
@@ -202,64 +257,20 @@ export default function PortfolioPage() {
             Production web platforms, enterprise systems, and mobile applications with full architectural details.
           </Heading>
           <div className="project-list">
-            {orderedProjects.map((project, index) => (
-              <article className={`project-row${project.featured ? ' featured-project' : ''}`} key={project.title}>
-                <div className="project-visual">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt || `Illustration for ${project.title}`}
-                    width={project.imageWidth || 600}
-                    height={project.imageHeight || 400}
-                    style={project.imageWidth && project.imageHeight
-                      ? { aspectRatio: `${project.imageWidth} / ${project.imageHeight}` }
-                      : undefined}
-                    sizes="(max-width: 600px) 100vw, (max-width: 1240px) 40vw, 454px"
-                  />
-                  <span className="project-number">{String(index + 1).padStart(2, '0')}</span>
-                </div>
-                <div className="project-body">
-                  <div className="project-meta">
-                    <span>{project.category}</span>
-                    {project.featured && <span className="project-featured-label">Featured</span>}
-                    {project.context && project.context !== 'Production' && (
-                      <span className="project-context">{project.context}</span>
-                    )}
-                    <span className="project-status">{project.status}</span>
-                  </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tags" aria-label="Technologies">
-                    {project.tech.map(tech => (
-                      <span key={tech}>{tech}</span>
-                    ))}
-                  </div>
-                  <details className="project-details">
-                    <summary>Technical contributions</summary>
-                    {project.architecture && (
-                      <p className="project-architecture">
-                        <strong>Architecture:</strong> {project.architecture}
-                      </p>
-                    )}
-                    <ul>
-                      {project.contributions.map(detail => (
-                        <li key={detail}>{detail}</li>
-                      ))}
-                    </ul>
-                  </details>
-                  {project.link && (
-                    <ExternalLink className="project-link" href={project.link} ariaLabel={`Visit live website for ${project.title}`}>
-                      Visit live website
-                    </ExternalLink>
-                  )}
-                  {project.slug && (
-                    <a className="project-link" href={`/projects/${project.slug}`}>
-                      Read project case study
-                    </a>
-                  )}
-                </div>
-              </article>
+            {featuredProjects.map((project, index) => (
+              <ProjectRow project={project} index={index} key={project.title} />
             ))}
           </div>
+          {additionalProjects.length > 0 && (
+            <details className="more-projects">
+              <summary>More projects <span>{additionalProjects.length} projects</span></summary>
+              <div className="project-list">
+                {additionalProjects.map((project, index) => (
+                  <ProjectRow project={project} index={featuredProjects.length + index} key={project.title} />
+                ))}
+              </div>
+            </details>
+          )}
           <p className="source-note project-note">
             Explore more projects and code samples on my GitHub.{' '}
             <ExternalLink href="https://github.com/nikhil0667" ariaLabel="View Nikhil Khambhayta GitHub profile">View my GitHub profile</ExternalLink>.
@@ -408,113 +419,18 @@ export default function PortfolioPage() {
 
         {/* RÉSUMÉ SECTION */}
         <section id="resume" className="section resume-section">
-          <Heading number="07" label="RÉSUMÉ & CV" title="Curriculum Vitae & Career Highlights.">
-            Overview of engineering experience, project contributions, education, and technical capabilities.
+          <Heading number="07" label="RÉSUMÉ" title="Want the concise version?">
+            Download my résumé for a focused overview of experience, projects, education, and technical skills.
           </Heading>
-
-          <div className="resume-card-container">
-            {/* Left Column: ATS Executive Summary Card */}
-            <div className="resume-preview-card">
-              <div className="resume-card-header">
-                <div>
-                  <span className="resume-doc-tag">PDF RESUME</span>
-                  <h3>Nikhil Khambhayta</h3>
-                  <p className="resume-doc-subtitle">Software Engineer | Flutter, Java &amp; Spring Boot</p>
-                </div>
-              </div>
-
-              <div className="resume-summary-grid">
-                <div className="resume-summary-col">
-                  <h4>Core Engineering</h4>
-                  <ul>
-                    <li>Mobile Development (Flutter, Dart, Android SDK)</li>
-                    <li>Backend Systems (Java, Spring Boot, REST APIs)</li>
-                    <li>Full-Stack Web (Next.js 16, React 19, TypeScript)</li>
-                    <li>Relational Databases (MySQL, PostgreSQL, JPA)</li>
-                  </ul>
-                </div>
-                <div className="resume-summary-col">
-                  <h4>Experience &amp; Education</h4>
-                  <ul>
-                    <li><strong>Shivaay Soft:</strong> Mobile Application Developer · Aug 2026–Present</li>
-                    <li><strong>Hyperlink Infosystem:</strong> Software Engineer Intern · Nov 2025–May 2026</li>
-                    <li><strong>DeepVecto:</strong> Mobile Application Developer Intern · Aug 2023–Aug 2024</li>
-                    <li><strong>Education:</strong> MCA (Aug 2024–Apr 2026, 8.5 CPI) &amp; BCA (Nov 2021–Feb 2024, Distinction)</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="resume-highlights-row">
-                <div className="highlight-pill">
-                  <strong>Flutter + Java</strong>
-                  <span>Engineering focus</span>
-                </div>
-                <div className="highlight-pill">
-                  <strong>8.5 CPI</strong>
-                  <span>MCA Grade</span>
-                </div>
-                <div className="highlight-pill">
-                  <strong>7 Listed</strong>
-                  <span>Courses &amp; credentials</span>
-                </div>
-                <div className="highlight-pill">
-                  <strong>Surat, IN</strong>
-                  <span>Location</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Download & Action Hub */}
-            <div className="resume-actions-card">
-              <div className="resume-action-box">
-                <div className="resume-icon-circle">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
-                  </svg>
-                </div>
-                <h4>Download Curriculum Vitae</h4>
-                <p>Get a concise PDF résumé outlining work history, technical skills, education, and project contributions.</p>
-
-                <div className="resume-cta-buttons">
-                  <a
-                    className="button resume-download-btn"
-                    href="/assets/Nikhil_Khambhayta_Resume.pdf"
-                    download="Nikhil_Khambhayta_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                      <polyline points="7 10 12 15 17 10" />
-                      <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                    <span>Download CV (PDF)</span>
-                  </a>
-
-                  <a
-                    className="button-secondary"
-                    href="https://www.linkedin.com/in/nikhil-khambhayta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                    <span>LinkedIn profile</span>
-                  </a>
-
-                  <a
-                    className="inline-email-link"
-                    href="mailto:nikhilkhambhayta@gmail.com?subject=Resume%20Inquiry%20-%20Nikhil%20Khambhayta&body=Hi%20Nikhil,%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20engineering%20opportunity%20or%20request%20your%20latest%20customized%20resume.%0A%0ABest%20regards,"
-                  >
-                    ✉️ Request tailored copy via email
-                  </a>
-                </div>
-              </div>
+          <div className="resume-simple-card">
+            <p>Experience, selected projects, education, and technical skills in a single PDF.</p>
+            <div className="resume-simple-actions">
+              <a className="button" href="/assets/Nikhil_Khambhayta_Resume.pdf" download="Nikhil_Khambhayta_Resume.pdf">
+                Download Resume PDF
+              </a>
+              <ExternalLink className="button-secondary" href="https://www.linkedin.com/in/nikhil-khambhayta">
+                View LinkedIn
+              </ExternalLink>
             </div>
           </div>
         </section>

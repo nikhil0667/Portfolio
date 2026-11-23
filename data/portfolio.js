@@ -92,9 +92,18 @@ export const education = [
 
 export const skillGroups = [
   [
-    'Mobile Engineering',
+    'Primary Stack',
+    'The core technologies I use across mobile applications and backend systems.',
+    ['Flutter', 'Dart', 'Java', 'Spring Boot', 'REST APIs', 'MySQL'],
+    [
+      { label: 'Event QR Attendance System', slug: 'event-qr-attendance' },
+      { label: 'LMS System', slug: 'lms-system' }
+    ]
+  ],
+  [
+    'Mobile Development',
     'Cross-platform and Android application development, represented in the LMS, expense tracker, and QR attendance projects.',
-    ['Flutter', 'Dart', 'Android SDK', 'Firebase', 'REST API integration', 'Clean Architecture'],
+    ['Android SDK', 'Firebase', 'Provider', 'REST API integration', 'Clean Architecture'],
     [
       { label: 'Event QR Attendance System', slug: 'event-qr-attendance' },
       { label: 'LMS System', slug: 'lms-system' },
@@ -102,7 +111,7 @@ export const skillGroups = [
     ]
   ],
   [
-    'Backend Engineering',
+    'Backend Development',
     'Server-side application development, API design, and authentication across the QR attendance system and production mobile workflows.',
     ['Java', 'Spring Boot', 'Spring Data JPA', 'Hibernate', 'REST APIs', 'JWT authentication'],
     [
@@ -110,7 +119,7 @@ export const skillGroups = [
     ]
   ],
   [
-    'Web Engineering',
+    'Web Development',
     'Modern web application development applied to the Ved Enterprise platform and event administration dashboard.',
     ['Next.js App Router', 'React', 'TypeScript', 'Tailwind CSS', 'Internationalization', 'Technical SEO'],
     [
@@ -119,9 +128,9 @@ export const skillGroups = [
     ]
   ],
   [
-    'Data & Engineering Tools',
-    'Relational databases, version control, and delivery workflows used across the attendance, mobile, and web projects.',
-    ['MySQL', 'SQL', 'SQLite', 'Git & GitHub', 'Postman', 'Vercel'],
+    'Tools & Data',
+    'Version control, API testing, deployment, and relational data tools used across my projects.',
+    ['SQL', 'SQLite', 'Git & GitHub', 'Postman', 'Vercel', 'Railway'],
     [
       { label: 'Event QR Attendance System', slug: 'event-qr-attendance' },
       { label: 'Android Expense Tracker', slug: 'android-expense-tracker' },
@@ -203,6 +212,7 @@ export const projects = [
   },
   {
     "title": "LMS System",
+    "featured": true,
     "slug": "lms-system",
     "seoTitle": "Flutter Learning Management System",
     "seoDescription": "A Flutter learning management app developed during an internship, with authentication, course modules, quiz submissions, and progress tracking.",
