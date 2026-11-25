@@ -61,7 +61,9 @@ export default async function ProjectCaseStudy({ params }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+        }}
       />
       <a className="skip" href="#main">Skip to content</a>
       <header className="project-detail-header">
