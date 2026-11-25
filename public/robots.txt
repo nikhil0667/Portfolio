@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://nikhilkhambhayta.vercel.app/sitemap.xml

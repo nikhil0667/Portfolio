@@ -5,6 +5,32 @@ const contentSecurityPolicy =
     : "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; require-trusted-types-for 'script'";
 
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'nikhilkhambhayta.vercel.app',
+          },
+        ],
+        destination: 'https://nikhilkhambhayta.dev/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.nikhilkhambhayta.dev',
+          },
+        ],
+        destination: 'https://nikhilkhambhayta.dev/:path*',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

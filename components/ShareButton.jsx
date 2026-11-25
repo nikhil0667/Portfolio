@@ -45,8 +45,8 @@ export default function ShareButton() {
 
   const shareData = {
     title: 'Nikhil Khambhayta | Software Engineer',
-    text: 'Check out Nikhil Khambhayta\'s Portfolio — Mobile Application Developer at Shivaay Soft & MCA Graduate (Flutter, Java, Spring Boot, Next.js)',
-    url: 'https://nikhilkhambhayta.vercel.app/'
+    text: 'Check out Nikhil Khambhayta\'s Portfolio — Software Engineer specializing in Flutter, Java, Spring Boot, and Next.js',
+    url: 'https://nikhilkhambhayta.dev/'
   };
 
   const handleNativeShare = async () => {
@@ -82,9 +82,9 @@ export default function ShareButton() {
       'TITLE:Software Engineer',
       'ORG:Shivaay Soft',
       'EMAIL;TYPE=INTERNET,WORK:nikhilkhambhayta@gmail.com',
-      'URL:https://nikhilkhambhayta.vercel.app',
+      'URL:https://nikhilkhambhayta.dev/',
       'ADR;TYPE=WORK:;;Surat;Gujarat;;India',
-      'X-SOCIALPROFILE;TYPE=linkedin:https://linkedin.com/in/nikhil-khambhayta',
+      'X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/nikhil-khambhayta/',
       'X-SOCIALPROFILE;TYPE=github:https://github.com/nikhil0667',
       'NOTE:Software Engineer focused on Flutter, Dart, Java, Spring Boot, and modern web development. MCA from LDRP-ITR (GTU).',
       'END:VCARD'

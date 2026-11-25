@@ -1,18 +1,36 @@
-import './globals.css'
-import './redesign.css'
+import './globals.css';
+import './redesign.css';
+import { HOME_DESCRIPTION, SITE_NAME, SITE_URL } from '../lib/site';
+
+export const viewport = {
+  themeColor: '#101215',
+};
 
 export const metadata = {
-  metadataBase: new URL('https://nikhilkhambhayta.vercel.app'),
-  applicationName: 'Nikhil Khambhayta',
+  metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: 'Nikhil Khambhayta | Software Engineer',
-    template: '%s | Nikhil Khambhayta',
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
-  keywords: 'Nikhil Khambhayta, Software Engineer, Mobile Application Developer, Shivaay Soft, Hyperlink Infosystem, DeepVecto, Flutter Developer, Dart, Java Developer, Spring Boot, REST APIs, Android Developer, Next.js, React, Ved Enterprise, LDRP-ITR, GTU, Surat, Portfolio',
-  authors: [{ name: 'Nikhil Khambhayta', url: 'https://nikhilkhambhayta.vercel.app/' }],
-  creator: 'Nikhil Khambhayta',
-  publisher: 'Nikhil Khambhayta',
+  description: HOME_DESCRIPTION,
+  keywords: [
+    'Nikhil Khambhayta',
+    'Nikhil Khambhayta Software Engineer',
+    'Software Engineer Portfolio',
+    'Flutter Developer',
+    'Dart',
+    'Java Developer',
+    'Spring Boot Developer',
+    'REST APIs',
+    'MySQL',
+    'Firebase',
+    'Next.js',
+    'Android Developer',
+  ],
+  authors: [{ name: SITE_NAME, url: `${SITE_URL}/` }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
@@ -35,136 +53,28 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Nikhil Khambhayta',
-    title: 'Nikhil Khambhayta | Software Engineer',
-    description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
-    url: 'https://nikhilkhambhayta.vercel.app/',
+    siteName: SITE_NAME,
+    title: SITE_NAME,
+    description: HOME_DESCRIPTION,
+    url: `${SITE_URL}/`,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Khambhayta | Software Engineer',
-    description: 'Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.',
+    title: SITE_NAME,
+    description: HOME_DESCRIPTION,
     creator: '@NKhambhayt35917',
   },
   verification: {
     google: 'HcdIgNjCKcidU7i7vt_gTUF88Z_ADK2TgWDmFaN8j6k',
   },
-  alternates: {
-    canonical: 'https://nikhilkhambhayta.vercel.app/',
-  },
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "WebSite",
-                  "@id": "https://nikhilkhambhayta.vercel.app/#website",
-                  "url": "https://nikhilkhambhayta.vercel.app/",
-                  "name": "Nikhil Khambhayta",
-                  "description": "Software Engineer specializing in Flutter, Java, Spring Boot, mobile applications, and backend systems.",
-                  "publisher": {
-                    "@id": "https://nikhilkhambhayta.vercel.app/#person"
-                  }
-                },
-                {
-                  "@type": "ProfilePage",
-                  "@id": "https://nikhilkhambhayta.vercel.app/#profilepage",
-                  "url": "https://nikhilkhambhayta.vercel.app/",
-                  "name": "Nikhil Khambhayta - Professional Profile",
-                  "mainEntity": {
-                    "@id": "https://nikhilkhambhayta.vercel.app/#person"
-                  }
-                },
-                {
-                  "@type": "Person",
-                  "@id": "https://nikhilkhambhayta.vercel.app/#person",
-                  "name": "Nikhil Khambhayta",
-                  "url": "https://nikhilkhambhayta.vercel.app/",
-                  "image": "https://nikhilkhambhayta.vercel.app/assets/photo.jpg",
-                  "jobTitle": "Software Engineer",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Surat",
-                    "addressRegion": "Gujarat",
-                    "addressCountry": "India"
-                  },
-                  "worksFor": {
-                    "@type": "Organization",
-                    "name": "Shivaay Soft",
-                    "description": "Product-based software company"
-                  },
-                  "alumniOf": [
-                    {
-                      "@type": "EducationalOrganization",
-                      "name": "LDRP Institute of Technology & Research, Gujarat Technological University",
-                      "department": "Information Technology"
-                    },
-                    {
-                      "@type": "EducationalOrganization",
-                      "name": "Udhna Citizen Commerce College & SPB College of Business Administration",
-                      "department": "Information Technology"
-                    }
-                  ],
-                  "hasCredential": [
-                    {
-                      "@type": "EducationalOccupationalCredential",
-                      "credentialCategory": "degree",
-                      "name": "Master of Computer Applications (MCA)",
-                      "recognizedBy": {
-                        "@type": "EducationalOrganization",
-                        "name": "Gujarat Technological University"
-                      }
-                    },
-                    {
-                      "@type": "EducationalOccupationalCredential",
-                      "credentialCategory": "degree",
-                      "name": "Bachelor of Computer Applications (BCA)",
-                      "description": "First Class with Distinction"
-                    }
-                  ],
-                  "sameAs": [
-                    "https://github.com/nikhil0667",
-                    "https://linkedin.com/in/nikhil-khambhayta",
-                    "https://x.com/NKhambhayt35917"
-                  ],
-                  "knowsAbout": [
-                    "Flutter",
-                    "Dart",
-                    "Java",
-                    "Spring Boot",
-                    "REST API Development",
-                    "Android SDK",
-                    "Next.js",
-                    "React",
-                    "TypeScript",
-                    "SQL",
-                    "MySQL",
-                    "Firebase",
-                    "JWT Authentication",
-                    "Clean Architecture",
-                    "Data Structures & Algorithms (DSA)",
-                    "Search Engine Optimization (SEO)"
-                  ]
-                }
-              ]
-            })
-          }}
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4" />
-        <link rel="alternate icon" href="/favicon.ico?v=4" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4" />
-      </head>
       <body suppressHydrationWarning>
         {children}
       </body>
     </html>
-  )
+  );
 }

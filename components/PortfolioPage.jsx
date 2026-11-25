@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { projects, certifications, experiences, education, skillGroups } from '../data/portfolio';
+import { EMAIL, SOCIAL_PROFILES } from '../lib/site';
 import ShareButton from './ShareButton';
 import ContactForm from './ContactForm';
 
@@ -91,9 +93,9 @@ function ProjectRow({ project, index }) {
           </ExternalLink>
         )}
         {project.slug && (
-          <a className="project-link" href={`/projects/${project.slug}`}>
+          <Link className="project-link" href={`/projects/${project.slug}`}>
             Read project case study
-          </a>
+          </Link>
         )}
       </div>
     </article>
@@ -129,13 +131,13 @@ export default function PortfolioPage() {
         {/* HERO SECTION */}
         <section className="hero" id="home">
           <div className="hero-copy">
-            <p className="eyebrow">NIKHIL KHAMBHAYTA · MOBILE &amp; BACKEND ENGINEER</p>
+            <p className="eyebrow">SOFTWARE ENGINEER PORTFOLIO · FLUTTER · JAVA · SPRING BOOT</p>
             <h1 className="hero-headline">
-              Mobile applications.<br />
-              <span>Scalable backends.</span>
+              Nikhil Khambhayta.<br />
+              <span>Software Engineer.</span>
             </h1>
             <p className="intro">
-              Software Engineer specializing in Flutter mobile development and Java Spring Boot backend systems. I build production-ready applications, integrate REST APIs, and solve problems across the application stack.
+              Software Engineer and Flutter Developer specializing in cross-platform mobile applications, Java and Spring Boot backend systems, REST APIs, MySQL, Firebase, and Next.js.
             </p>
             <p className="hero-context">
               Currently working as a <strong>Mobile Application Developer at Shivaay Soft</strong>.
@@ -143,7 +145,7 @@ export default function PortfolioPage() {
             <div className="actions">
               <a className="button" href="#projects">Explore my work</a>
               <a className="text-link" href="/assets/Nikhil_Khambhayta_Resume.pdf" download="Nikhil_Khambhayta_Resume.pdf">Download resume</a>
-              <a className="text-link" href="mailto:nikhilkhambhayta@gmail.com">Get in touch</a>
+              <a className="text-link" href={`mailto:${EMAIL}`}>Get in touch</a>
               <ShareButton />
             </div>
             <div className="hero-tech">
@@ -152,9 +154,9 @@ export default function PortfolioPage() {
               <span>Java</span>
               <span>Spring Boot</span>
               <span>REST APIs</span>
-              <span>Next.js</span>
-              <span>SQL</span>
+              <span>MySQL</span>
               <span>Firebase</span>
+              <span>Next.js</span>
             </div>
           </div>
           <div className="hero-console-card">
@@ -210,8 +212,8 @@ export default function PortfolioPage() {
           </div>
           <div className="hero-bottom">
             <span>SURAT, GUJARAT, INDIA</span>
-            <ExternalLink href="https://github.com/nikhil0667">GitHub</ExternalLink>
-            <ExternalLink href="https://www.linkedin.com/in/nikhil-khambhayta">LinkedIn</ExternalLink>
+            <ExternalLink href={SOCIAL_PROFILES.github}>GitHub</ExternalLink>
+            <ExternalLink href={SOCIAL_PROFILES.linkedin}>LinkedIn</ExternalLink>
             <a href="#resume">Résumé</a>
           </div>
         </section>
@@ -224,7 +226,7 @@ export default function PortfolioPage() {
           </div>
           <div className="about-copy">
             <p>
-              I’m Nikhil Khambhayta, a Software Engineer focused on Flutter applications and Java/Spring Boot services. At <strong>Shivaay Soft</strong>, I build and maintain mobile features, integrate APIs, and troubleshoot production issues across the application stack.
+              I’m Nikhil Khambhayta, a Software Engineer, Flutter Developer, and Java Spring Boot Developer. At <strong>Shivaay Soft</strong>, I build and maintain mobile features, integrate REST APIs, and troubleshoot production issues across the application stack.
             </p>
             <p>
               I approach problems end-to-end—from mobile UI and API integration to backend logic, authentication, and database behavior—focusing on root causes rather than surface-level fixes.
@@ -275,7 +277,7 @@ export default function PortfolioPage() {
           )}
           <p className="source-note project-note">
             Explore more projects and code samples on my GitHub.{' '}
-            <ExternalLink href="https://github.com/nikhil0667" ariaLabel="View Nikhil Khambhayta GitHub profile">View my GitHub profile</ExternalLink>.
+            <ExternalLink href={SOCIAL_PROFILES.github} ariaLabel="View Nikhil Khambhayta GitHub profile">View my GitHub profile</ExternalLink>.
           </p>
         </section>
 
@@ -292,7 +294,7 @@ export default function PortfolioPage() {
                 <div>
                   <div className="experience-company">
                     {exp.image ? (
-                      <Image src={exp.image} width={60} height={60} alt={`${exp.company} reference`} />
+                      <Image src={exp.image} width={60} height={60} alt={`${exp.company} — ${exp.role} reference`} />
                     ) : (
                       <div className="company-icon-badge" aria-hidden="true">{exp.badge || 'EXP'}</div>
                     )}
@@ -366,7 +368,7 @@ export default function PortfolioPage() {
             {certifications.map(cert => (
               <article key={cert.id} className="certificate-row">
                 <div className="certificate-image">
-                  <Image src={cert.image} alt={`${cert.issuer} logo or course artwork`} width={240} height={170} sizes="240px" />
+                  <Image src={cert.image} alt={`${cert.issuer} logo — ${cert.title} certificate`} width={240} height={170} sizes="240px" />
                 </div>
                 <div>
                   <p className="eyebrow">{cert.date} {cert.credentialId ? `· ID: ${cert.credentialId}` : ''}</p>
@@ -411,7 +413,7 @@ export default function PortfolioPage() {
                 <div className="skill-evidence">
                   <strong>Project evidence</strong>
                   {evidence.map(project => (
-                    <a key={project.slug} href={`/projects/${project.slug}`}>{project.label}</a>
+                    <Link key={project.slug} href={`/projects/${project.slug}`}>{project.label}</Link>
                   ))}
                 </div>
               </article>
@@ -430,7 +432,7 @@ export default function PortfolioPage() {
               <a className="button" href="/assets/Nikhil_Khambhayta_Resume.pdf" download="Nikhil_Khambhayta_Resume.pdf">
                 Download Resume PDF
               </a>
-              <ExternalLink className="button-secondary" href="https://www.linkedin.com/in/nikhil-khambhayta">
+              <ExternalLink className="button-secondary" href={SOCIAL_PROFILES.linkedin}>
                 View LinkedIn
               </ExternalLink>
             </div>
@@ -442,18 +444,18 @@ export default function PortfolioPage() {
           <div>
             <p className="eyebrow">08 / LET’S CONNECT</p>
             <h2>Have something<br />in <span>mind?</span></h2>
-            <p>For a project, full-time engineering opportunity, or a conversation about software architectures.</p>
-            <a className="email" href="mailto:nikhilkhambhayta@gmail.com">
-              nikhilkhambhayta@gmail.com
+            <p>For a project, full-time Software Engineer opportunity, or a conversation about mobile and backend architecture.</p>
+            <a className="email" href={`mailto:${EMAIL}`}>
+              {EMAIL}
             </a>
-            <a className="button contact-email-button" href="mailto:nikhilkhambhayta@gmail.com">
+            <a className="button contact-email-button" href={`mailto:${EMAIL}`}>
               Email me
             </a>
             <p className="contact-location">Surat, Gujarat, India</p>
             <div className="contact-links">
-              <ExternalLink href="https://github.com/nikhil0667">GitHub</ExternalLink>
-              <ExternalLink href="https://www.linkedin.com/in/nikhil-khambhayta">LinkedIn</ExternalLink>
-              <ExternalLink href="https://x.com/NKhambhayt35917">X / Twitter</ExternalLink>
+              <ExternalLink href={SOCIAL_PROFILES.github}>GitHub</ExternalLink>
+              <ExternalLink href={SOCIAL_PROFILES.linkedin}>LinkedIn</ExternalLink>
+              <ExternalLink href={SOCIAL_PROFILES.x}>X / Twitter</ExternalLink>
             </div>
           </div>
           <ContactForm />

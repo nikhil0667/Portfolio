@@ -1,6 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../../data/portfolio';
+import { SITE_URL, getProjectStructuredData } from '../../../lib/site';
 import './project.css';
 
 const caseStudyProjects = projects.filter(project => project.slug);
@@ -19,7 +21,7 @@ export async function generateMetadata({ params }) {
 
   if (!project) return {};
 
-  const canonical = `/projects/${project.slug}`;
+  const canonical = `${SITE_URL}/projects/${project.slug}`;
 
   return {
     title: project.seoTitle,
@@ -47,20 +49,27 @@ export default async function ProjectCaseStudy({ params }) {
 
   if (!project) notFound();
 
+  const otherProjects = caseStudyProjects.filter(item => item.slug !== project.slug);
+  const structuredData = getProjectStructuredData(project);
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <a className="skip" href="#main">Skip to content</a>
       <header className="project-detail-header">
-        <a className="brand" href="/" aria-label="Nikhil Khambhayta home">nk<span>.</span></a>
+        <Link className="brand" href="/" aria-label="Nikhil Khambhayta home">nk<span>.</span></Link>
         <nav aria-label="Project navigation">
-          <a href="/#projects">All projects</a>
-          <a href="/#contact" className="nav-contact">Contact</a>
+          <Link href="/#projects">All projects</Link>
+          <Link href="/#contact" className="nav-contact">Contact</Link>
         </nav>
       </header>
 
       <main id="main" className="project-detail-main">
         <nav className="project-breadcrumbs" aria-label="Breadcrumb">
-          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/#projects">Projects</a><span aria-hidden="true">/</span><span>{project.title}</span>
+          <Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/#projects">Projects</Link><span aria-hidden="true">/</span><span>{project.title}</span>
         </nav>
 
         <article className="project-case-study">
@@ -113,14 +122,28 @@ export default async function ProjectCaseStudy({ params }) {
                 Visit live project <span className="sr-only">(opens in a new tab)</span>
               </a>
             )}
-            <a className="text-link" href="/#projects">Back to all projects</a>
+            <Link className="text-link" href="/#projects">Back to all projects</Link>
           </div>
+
+          {otherProjects.length > 0 && (
+            <section className="project-case-section project-related-section" aria-label="More project case studies">
+              <h2>More case studies</h2>
+              <ul className="project-related-list">
+                {otherProjects.map(item => (
+                  <li key={item.slug}>
+                    <Link href={`/projects/${item.slug}`}>{item.title}</Link>
+                    <span> — {item.category}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </article>
       </main>
 
       <footer className="project-detail-footer">
-        <a className="brand" href="/">nk<span>.</span></a>
-        <a href="/#contact">Contact Nikhil</a>
+        <Link className="brand" href="/">nk<span>.</span></Link>
+        <Link href="/#contact">Contact Nikhil</Link>
       </footer>
     </>
   );
