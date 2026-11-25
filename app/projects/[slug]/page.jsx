@@ -22,6 +22,11 @@ export async function generateMetadata({ params }) {
   if (!project) return {};
 
   const canonical = `${SITE_URL}/projects/${project.slug}`;
+  const isRasterImage = !project.image.endsWith('.svg');
+  const ogImages = isRasterImage
+    ? [{ url: project.image, alt: project.imageAlt || project.title }]
+    : undefined;
+  const twitterImages = isRasterImage ? [project.image] : undefined;
 
   return {
     title: project.seoTitle,
@@ -32,13 +37,13 @@ export async function generateMetadata({ params }) {
       title: project.seoTitle,
       description: project.seoDescription,
       url: canonical,
-      images: [{ url: project.image, alt: project.imageAlt || project.title }],
+      ...(ogImages ? { images: ogImages } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: project.seoTitle,
       description: project.seoDescription,
-      images: [project.image],
+      ...(twitterImages ? { images: twitterImages } : {}),
     },
   };
 }
