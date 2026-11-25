@@ -101,6 +101,10 @@
     border-top: 1px solid var(--line);
 }
 
+.project-detail-footer p {
+    margin: 0;
+}
+
 .project-detail-footer > a:last-child {
     color: var(--muted);
 }

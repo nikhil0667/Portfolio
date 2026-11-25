@@ -4,6 +4,7 @@ import { projects, certifications, experiences, education, skillGroups } from '.
 import { EMAIL, SOCIAL_PROFILES } from '../lib/site';
 import ShareButton from './ShareButton';
 import ContactForm from './ContactForm';
+import SiteFooter from './SiteFooter';
 
 const featuredProjects = projects.filter(project => project.featured);
 const additionalProjects = projects.filter(project => !project.featured);
@@ -451,7 +452,6 @@ export default function PortfolioPage() {
             <a className="button contact-email-button" href={`mailto:${EMAIL}`}>
               Email me
             </a>
-            <p className="contact-location">Surat, Gujarat, India</p>
             <div className="contact-links">
               <ExternalLink href={SOCIAL_PROFILES.github}>GitHub</ExternalLink>
               <ExternalLink href={SOCIAL_PROFILES.linkedin}>LinkedIn</ExternalLink>
@@ -462,11 +462,7 @@ export default function PortfolioPage() {
         </section>
       </main>
 
-      <footer>
-        <a className="brand" href="#home" aria-label="Back to Nikhil Khambhayta home">nk<span>.</span></a>
-        <p>© 2026 Nikhil Khambhayta. All rights reserved. Surat, Gujarat, India.</p>
-        <a href="#home">Back to top</a>
-      </footer>
+      <SiteFooter actionHref="#home" actionLabel="Back to top" />
     </>
   );
 }

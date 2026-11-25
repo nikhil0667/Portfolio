@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projects } from '../../../data/portfolio';
 import { SITE_URL, getProjectStructuredData } from '../../../lib/site';
+import SiteFooter from '../../../components/SiteFooter';
 import './project.css';
 
 const caseStudyProjects = projects.filter(project => project.slug);
@@ -148,10 +149,12 @@ export default async function ProjectCaseStudy({ params }) {
         </article>
       </main>
 
-      <footer className="project-detail-footer">
-        <Link className="brand" href="/">nk<span>.</span></Link>
-        <Link href="/#contact">Contact Nikhil</Link>
-      </footer>
+      <SiteFooter
+        className="project-detail-footer"
+        actionHref="/#contact"
+        actionLabel="Contact"
+        useNextLink
+      />
     </>
   );
 }
